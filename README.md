@@ -1,65 +1,37 @@
-# eleventy-high-performance-blog
+# Carlos Molina's blog
 
-A starter repository for building a blog with the [Eleventy static site generator](https://www.11ty.dev/) implementing a wide range of performance best practices.
+> _Based on https://github.com/google/eleventy-high-performance-blog_
 
-![Screenshot showing that the site achieves 100 points on Lighthouse by default](https://cdn.glitch.com/db98564e-04da-47bf-a3d6-70803c3d0fe7%2FScreen%20Shot%202020-09-04%20at%2012.07.27.png?v=1599214260591)
+## 🚀 Quick start
 
-Based on the awesome [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
+1.  **Run dev server**
 
-## Demo
+    Navigate into your new site’s directory and start it up.
 
-- [Netlify Demo](https://eleventy-high-performance-blog-sample.industrialempathy.com/)
-- [Original site this template was based on](https://www.industrialempathy.com/)
+    ```sh
+    cd cmolina.dev/
+    npm i
 
-## Getting Started
+    npm run watch
+    # Your site will be running at http://localhost:8080
+    ```
 
-### 1. Generate a new repository from this repository template
+1.  **Deploy ✨**
 
-Click the ["Use this template"](https://github.com/google/eleventy-high-performance-blog/generate) button. Alternatively you can clone this repo yourself and push your copy to your favorite git repository.
+    The website is hosted with [Firebase](https://console.firebase.google.com/project/cmolina-blog/overview). You will need to install its CLI globally `npm install -g firebase-tools` and run `firebase login` once.
 
-### 2. Clone your new repository
+    ```sh
+    # build and serve prod assets
+    npm run build && npm run serve
 
-```
-git clone https://github.com/YOUR_REPO
-```
+    # Checkout http://localhost:5000/,
+    # then stop the server and push to prod!
+    npm run deploy
 
-### 3. Navigate to the directory
+    # see it live https://cmolina.dev/
+    ```
 
-```
-cd my-blog-name
-```
-
-### 4. Install dependencies
-
-```
-npm install
-```
-
-### 5. Build, serve, watch and test
-
-```
-npm run watch
-```
-
-### 6. Build and test
-
-```
-npm run build
-```
-
-## Customize
-
-- Search for "Update me" across files in your editor to find all the site specific things you should update.
-- Update the favicons in 'img/favicon/'.
-- Otherwise: Knock yourself out. This is a template repository.
-- For a simple color override, adjust these CSS variables at the top of `css/main.css`.
-
-```css
-:root {
-  --primary: #e7bf60;
-  --primary-dark: #f9c412;
-}
-```
+> Review the previous implementation at https://github.com/cmolina/cmolina.dev_gatsby-starter-blog
 
 ## Features
 
@@ -87,7 +59,6 @@ npm run build
 
 #### CSS
 
-- Defaults to the compact "classless" [Bahunya CSS framework](https://kimeiga.github.io/bahunya/).
 - Inlines CSS.
 - Dead-code-eliminates / tree-shakes / purges (pick your favorite word) unused CSS on a per-page basis with [PurgeCSS](https://purgecss.com/).
 - Minified CSS with [csso](https://www.npmjs.com/package/csso).
@@ -153,3 +124,20 @@ Generates a strong CSP for the base template.
 ## Disclaimer
 
 This is not an officially supported Google product, but rather [Malte's](https://twitter.com/cramforce) private best-effort open-source project.
+
+## How to bring updates from upstream
+Originally, I added the original repo as a remote with
+
+```sh
+git remote add upstream git@github.com:google/eleventy-high-performance-blog.git
+```
+
+To do the merge, I run
+
+```sh
+git fetch upstream
+git merge upstream/main main --allow-unrelated-histories --strategy-option=theirs --squash
+git commit
+```
+
+In this case, I haven't modified the template yet so I can safely take the upstream changes. In the future, I will need to review the changes before committing.

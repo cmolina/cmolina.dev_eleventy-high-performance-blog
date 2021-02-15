@@ -28,6 +28,9 @@ const ampOptimizer = AmpOptimizer.create({
 });
 const PurgeCSS = require("purgecss").PurgeCSS;
 const csso = require("csso");
+const { promisify } = require("util");
+const fs = require("fs");
+const readFile = promisify(fs.readFile);
 
 /**
  * Inlines the CSS.
@@ -45,9 +48,7 @@ const purifyCss = async (rawContent, outputPath) => {
     !isAmp(content) &&
     !/data-style-override/.test(content)
   ) {
-    let before = require("fs").readFileSync("css/main.css", {
-      encoding: "utf-8",
-    });
+    let before = await getAllCSSContent();
 
     before = before.replace(
       /@font-face {/g,
@@ -74,6 +75,7 @@ const purifyCss = async (rawContent, outputPath) => {
       ],*/
       fontFace: true,
       variables: true,
+      whitelistPatternsChildren: [/:focus$/]
     });
 
     const after = csso.minify(purged[0].css).css;
@@ -83,6 +85,19 @@ const purifyCss = async (rawContent, outputPath) => {
   }
   return content;
 };
+
+async function getAllCSSContent() {
+  const cssFiles = [
+    "css/fonts.css",
+    "css/main.css",
+    "css/global.css",
+    "css/prism-coy-a11y.css",
+  ];
+  const contents = await Promise.all(
+    cssFiles.map(filename => readFile(filename, { encoding: "utf-8" }))
+  );
+  return contents.join("\n");
+}
 
 const minifyHtml = (rawContent, outputPath) => {
   let content = rawContent;

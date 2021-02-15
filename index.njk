@@ -1,5 +1,5 @@
 ---
-title: Title. Update me.
+title: Hi, this is Carlos Molina's website
 layout: layouts/home.njk
 description: Description. Update me.
 image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
@@ -7,12 +7,18 @@ date: Last Modified
 ---
 
 <p>
-  This is a demo website based on 
-  <a href="https://www.industrialempathy.com/posts/eleventy-high-performance-blog/">eleventy-high-performance-blog</a>.
+  Hi, my name is <strong>{{ metadata.author.name }}</strong>.
+  <br>
+  I work as a software developer in Seattle, I love veggie food, reading, nature and playing with cats.
+  <br>
+  Besides this website where I write things, you can also find me in 
+  <a href="https://twitter.com/{{ metadata.author.twitterHandle }}" target="_blank" rel="noopener noreferrer">Twitter</a>
+  and
+  <a href="https://github.com/{{ collections.author.githubHandle }}" target="_blank" rel="noopener noreferrer">Github</a>.
 </p>
 
 <div id="posts">
-  <h2>Posts</h2>
+  <p>Here there is a list with my latest posts</p>
   {% set postslist = collections.posts %}
   {% include "postslist.njk" %}
 </div>

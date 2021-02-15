@@ -1,0 +1,284 @@
+/**
+* prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML,
+* with small changes to improve accessibility to comply with WCAG 2 level AA
+* Based on prismjs/themes/prism-coy.css
+*/
+
+:root {
+    --code-border-color: #dfdfdf;
+    --code-inline-border: #0001;
+    --comment-color: #657486;
+    --constant-color: #c92c2c;
+    --highlight-line-background: #feb;
+    --highlight-line-border: #f99;
+    --keyword-color: #007194;
+    --operator-background: #fff8;
+    --operator-color: #966936;
+    --punctuation-color: #5F6364;
+    --selector-color: #217a00;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --code-border-color: #454b4c;
+        --code-inline-border: #fff2;
+        --comment-color: #e2d6c6;
+        --constant-color: #ff7575;
+        --highlight-line-background: #80620a;
+        --highlight-line-border: #c0ac0d;
+        --keyword-color: #94ffff;
+        --operator-background: #0002;
+        --operator-color: #ffe6a5;
+        --punctuation-color: #f2e9da;
+        --selector-color: #deffad;
+    }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: var(--color);
+    background: none;
+    font-family: var(--mono-font);
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    position: relative;
+    margin: .5em 0;
+    overflow: visible;
+    padding: 0;
+}
+pre[class*="language-"]>code {
+    position: relative;
+    border-left: .2rem solid var(--primary-color-2);
+    box-shadow: -1px 0px 0px 0px var(--primary-color-2), 0px 0px 0px 1px var(--code-border-color);
+    background-color: var(--background);
+    background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+    background-size: 3em 3em;
+    background-origin: content-box;
+    background-attachment: local;
+}
+
+code[class*="language"] {
+    max-height: inherit;
+    height: inherit;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    display: block;
+    overflow: auto;
+}
+
+/* Margin bottom to accommodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    position: relative;
+    padding: .2em;
+    border-radius: 0.3em;
+    color: var(--constant-color);
+    border: 1px solid var(--code-inline-border);
+    display: inline;
+    white-space: normal;
+}
+
+:not(pre) > code[class*="language-"]:after,
+pre[class*="language-"]:after {
+    right: 0.75em;
+    left: auto;
+    transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--comment-color);
+}
+
+.token.punctuation {
+    color: var(--punctuation-color);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: var(--constant-color);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+    color: var(--selector-color);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+    background: var(--operator-background);
+    color: var(--operator-color);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+    color: var(--keyword-color);
+}
+
+.token.regex,
+.token.important {
+    color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+    color: #966936;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+    font-weight: normal;
+}
+
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.namespace {
+    opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+    pre[class*="language-"]:before,
+    pre[class*="language-"]:after {
+        bottom: 14px;
+        box-shadow: none;
+    }
+
+}
+
+/* Plugin styles */
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+    color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers.line-numbers {
+    padding-left: 3rem;
+}
+
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+    left: .5rem !important;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+    position: relative;
+	counter-reset: linenumber;
+    padding: 0;
+    padding-left: 1.5rem;
+    overflow: initial;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -4rem;
+	width: 3rem;
+	letter-spacing: -1px;
+	user-select: none;
+}
+
+.line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #999;
+    display: block;
+    padding-right: 0.8rem;
+    text-align: right;
+    min-width: 1.875rem;
+}
+
+/* Plugin styles: Highlight */
+pre[class*="language-"][data-line] {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+pre[data-line] code {
+    position: relative;
+    padding-left: 4em;
+}
+pre .line-highlight {
+    margin-top: 0;
+}
+
+/* Plugin styles: Line Highlight for GatsbyJS */
+.gatsby-highlight-code-line {
+    background-color: var(--highlight-line-background);
+    display: block;
+    margin-left: -.5rem;
+    padding-left: .25rem;
+    min-width: 80ch;
+    border-left: 0.25em solid var(--highlight-line-border);
+}
+
+/* Plugin gatsby-remark-prismjs-title */
+.gatsby-code-title {
+    position: relative;
+    top: 10px;
+}
+  
+.gatsby-code-title span {
+    font-family: var(--mono-font);
+    font-weight: 600;
+    font-size: 90%;
+    border: solid 1px var(--code-border-color);
+    border-left: none;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    padding: .2rem 2rem;
+}

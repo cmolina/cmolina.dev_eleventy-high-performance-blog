@@ -52,6 +52,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownItFooter = require("markdown-it-footnote");
 const localImages = require("./third_party/eleventy-plugin-local-images/.eleventy.js");
 const CleanCSS = require("clean-css");
 const GA_ID = require("./_data/metadata.json").googleAnalyticsId;
@@ -164,6 +165,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
+  eleventyConfig.addCollection("posts", require("./_11ty/getPostList"));
 
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
@@ -189,7 +191,7 @@ module.exports = function (eleventyConfig) {
     permalink: true,
     permalinkClass: "direct-link",
     permalinkSymbol: "#",
-  });
+  }).use(markdownItFooter);
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Browsersync Overrides

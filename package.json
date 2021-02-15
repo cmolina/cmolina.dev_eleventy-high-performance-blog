@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run js-build && eleventy && npm run test",
     "watch": "concurrently \"eleventy --serve\" \"npm run js-build-watch\" \"npm run test-watch\"",
-    "serve": "eleventy --serve",
+    "serve": "npx serve _site",
+    "deploy": "firebase deploy",
     "js-build": "rollup -c rollup.config.js",
     "js-build-watch": "rollup -c rollup.config.js -w",
     "debug": "DEBUG=* eleventy && npm run test",
@@ -37,6 +38,7 @@
     "luxon": "^1.21.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
+    "markdown-it-footnote": "^3.0.2",
     "node-fetch": "^2.6.1",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
