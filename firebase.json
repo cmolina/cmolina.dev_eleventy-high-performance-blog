@@ -6,11 +6,14 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+    "redirects": [
+      { "source": "/posts/demistify-promises", "destination": "/posts/2019/08/demistify-promises", "type": 301 },
+      { "source": "/posts/images-for-every-resolution", "destination": "/posts/2019/07/images-for-every-resolution", "type": 301 },
+      { "source": "/posts/logging-functions", "destination": "/posts/2020/05/logging-functions", "type": 301 },
+      { "source": "/posts/publish-typescript-package", "destination": "/posts/2020/07/publish-typescript-package", "type": 301 },
+      { "source": "/posts/retrying-functions", "destination": "/posts/2020/02/retrying-functions", "type": 301 },
+      { "source": "/posts/return-early", "destination": "/posts/2020/01/return-early", "type": 301 },
+      { "source": "/posts/timeout-functions", "destination": "/posts/2020/06/timeout-functions", "type": 301 }
     ],
     "headers": [
       {
