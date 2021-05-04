@@ -256,13 +256,14 @@ pre .line-highlight {
     margin-top: 0;
 }
 
-/* Plugin styles: Line Highlight for GatsbyJS */
-.gatsby-highlight-code-line {
+/* Plugin styles: Line Highlight */
+.highlight-line-active {
+    color: inherit;
     background-color: var(--highlight-line-background);
-    display: block;
+    display: inline-block;
     margin-left: -.5rem;
     padding-left: .25rem;
-    min-width: 80ch;
+    min-width: min(calc(100vw - 3.875rem), 80ch);
     border-left: 0.25em solid var(--highlight-line-border);
 }
 

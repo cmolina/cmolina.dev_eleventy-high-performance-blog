@@ -69,13 +69,11 @@ The presented approach solves the original statement and doesn't have the disadv
 
 Let's say `functionThatMayFail` now returns a Promise. Instead of hard-coding retries or going recursive, we can _slightly_ modify `callAndRetry` to wait for the function to fulfill, as
 
-``` javascript
-// highlight-next-line
+``` javascript/0,4
 async function callAndRetry(fn, maxAmountOfRetries) {
     let error;
     for (let retries = 0; retries < maxAmountOfRetries; retries++) {
         try {
-            // highlight-next-line
             return await fn();
         } catch (err) {
             error = err;

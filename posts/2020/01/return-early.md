@@ -24,14 +24,12 @@ function() {
 
 it is possible to rewrite it in a way you **return** after the condition, making the else block redundant.
 
-``` javascript
+``` javascript/3,5
 function() {
     if (condition) {
         doA();
-        // highlight-next-line
         return;
     }
-    // highlight-next-line
     // look mam, no else!
     doB();
 }

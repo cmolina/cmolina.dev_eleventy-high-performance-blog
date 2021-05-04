@@ -28,16 +28,14 @@ range(0, 5);    // returns [0, 1, 2, 3, 4]
 
 An initial approach would be to edit the original function and add the logs needed:
 
-``` javascript
+``` javascript/1,7
 function range(start, end) {
-    // highlight-next-line
     console.log(`Calling range(${start}, ${end})`);
 
     const result = Array(end - start)
         .fill(start)
         .map((start, index) => start + index);
 
-    // highlight-next-line
     console.log(`range(${start}, ${end}) returns ${result}`);
 
     return result;
@@ -53,11 +51,10 @@ This works, however it makes the function harder to read by mixing the proper lo
 
 An alternative solution would be to move all the logging logic outside to its function:
 
-``` javascript
+``` javascript/3,16
 // let's keep the original version of `range()` without logging statements
 
 // `logFunction()` creates a new function that handles the logging for us
-// highlight-next-line
 function logFunction(fn, thisArg) {
     return function() {
         const concatenatedArguments = Array.from(arguments).join(', ');
@@ -71,7 +68,6 @@ function logFunction(fn, thisArg) {
 }
 
 // create a version of `range()` with logs
-// highlight-next-line
 const loggedRange = logFunction(range);
 
 loggedRange(0, 5);    // returns [0, 1, 2, 3, 4]
@@ -100,20 +96,17 @@ class LoginEmailService {
 
 Following the idea of keeping logic apart from the logs, we can **create a new class** that extends the original one and makes the logging for us. A first attempt would be:
 
-``` javascript
+``` javascript/3,5,10
 class LoggedLoginEmailService extends LoginEmailService {
     // option 1: placing the logs directly
     lostPasswordFor(emailAddress, usersDB) {
-        // highlight-next-line
         console.log(`Calling lostPasswordFor(${emailAddress}, ${usersDB})`);
         const result = super.lostPasswordFor(emailAddress, usersDB);
-        // highlight-next-line
         console.log(`lostPasswordFor(${emailAddress}, ${usersDB}) returns ${result}`);
         return result;
     }
     // option 2: using `logFunction()`
     verifyEmailAddressFor() {
-        // highlight-next-line
         const loggedVerifyEmailAddressFor = logFunction(super.verifyEmailAddressFor);
         return loggedVerifyEmailAddressFor.apply(this, arguments);
     }
@@ -128,8 +121,13 @@ For the next example we will write 2 functions using Proxies:
 1. an external one, `loggingMethodsFor()`, will listen for reading the properties of an object, and will invoke...
 1. the internal `logMethod()` to log when a method is executed
 
-``` javascript
-// highlight-next-line
+``` javascript/0,6,25
+const loggedLoginEmailService = loggingMethodsFor(new LoginEmailService());
+loggedLoginEmailService.lostPasswordFor('a@b.c', 'db');
+// log these two lines:
+//    Calling LoginEmailService.lostPasswordFor(a@b.c,dbObject)
+//    LoginEmailService.lostPasswordFor(a@b.c, db) returns <...>
+
 function loggingMethodsFor(instance) {
     return new Proxy(instance, {
         get(target, propertyName) {
@@ -149,7 +147,6 @@ function isMethod(property) {
 }
 
 // equivalent of `logFunction()` but for methods
-// highlight-next-line
 function logMethod(method, className) {
     return new Proxy(method, {
         apply(fn, thisArg, argumentsList) {
@@ -163,13 +160,6 @@ function logMethod(method, className) {
         }
     })
 }
-
-// highlight-next-line
-const loggedLoginEmailService = loggingMethodsFor(new LoginEmailService());
-loggedLoginEmailService.lostPasswordFor('a@b.c', 'db');
-// log these two lines:
-//    Calling LoginEmailService.lostPasswordFor(a@b.c,dbObject)
-//    LoginEmailService.lostPasswordFor(a@b.c, db) returns <...>
 ```
 
 Do you realize how similar both `logFunction()` and `logMethod()` are? By using the fact that there are no technical differences between methods and functions, we can modify `logFunction()` for logging _both methods and functions_.

@@ -141,3 +141,8 @@ git commit
 ```
 
 In this case, I haven't modified the template yet so I can safely take the upstream changes. In the future, I will need to review the changes before committing.
+
+## Apple M1 pre-requisites
+- Install node 15. I used `nvm i node`
+- `sharp` will need `vips` to be installed: `arch -arm64 brew install vips`
+- Follow the steps under Quick Start
