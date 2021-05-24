@@ -33,6 +33,9 @@
       <meta property="og:image" content="{{ image | absoluteUrl(metadata.url) }}">
     {% endif %}
 
+    <link rel="preload" href="/fonts/merriweather-latin-300-normal.woff2" as="font" type="font/woff2" media="(prefers-color-scheme: dark)" crossorigin>
+    <link rel="preload" href="/fonts/merriweather-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
     <link rel="canonical" href="{{ metadata.url }}{{ canonicalUrl or page.url }}">
     <!-- This is a blog and so it SHOULD be safe and it is nice for the web
          to send referrers cross-origin.
@@ -58,14 +61,13 @@
   <body>
     <div class="centered-content">
       <header>
-        <nav>
-          <div id="nav">
-            <a href="{{ '/' | url }}" title="Homepage" rel="index">{{ metadata.title }}</a>
-            <!-- {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-            {%- for entry in collections.all | eleventyNavigation %}
-              <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-            {%- endfor %} -->
-          </div>
+        <nav id="nav">
+          <a href="{{ '/' | url }}" title="Homepage" rel="index">{{ metadata.title }}</a>
+          <a href="/about/values">My Values</a>
+          <!-- {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+          {%- for entry in collections.all | eleventyNavigation %}
+            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+          {%- endfor %} -->
         </nav>
         <h1>{{ title }}</h1>
         {% block extraArticleHeader %}{% endblock %}
@@ -87,7 +89,7 @@
       </main>
 
       <footer>
-        Built with 11ty based on google/eleventy-high-performance-blog.
+        Built with 11ty.
         <a href="https://github.com/cmolina/cmolina-blog" target="_blank" rel="noopener noreferrer">Link to source code</a>.
       </footer>
 

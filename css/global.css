@@ -58,26 +58,24 @@ picture > img {
 }
 
 :focus {
-    outline: thick var(--primary-color-2) solid;
+    outline: .3rem var(--primary-color-2) solid;
     outline-offset: .3rem;
+    text-decoration: none;
+}
+
+a {
+    text-decoration-color: var(--primary-color-2);
+    text-decoration-thickness: .3rem;
+    text-underline-offset: .1em;
 }
 
 h1, h2, h3, h4, h5, h6, a {
     color: var(--color);
-}
-
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-    h1, h2, h3, h4, h5, h6, a {
-        color: transparent;
-        background: var(--gradient);
-        background-clip: text;
-        -webkit-background-clip: text;
-        line-height: 1.5;
-    }
+    line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: calc(var(--font-weight) - 100);
     letter-spacing: -0.05rem;
 }
 
@@ -96,13 +94,6 @@ blockquote {
 
 hr + .bio {
     margin-bottom: 25vw !important;
-}
-
-a[rel="index"]::before {
-    background: inherit;
-    content: "👆";
-    position: relative;
-    padding-right: 1ch;
 }
 
 a[rel="prev"]::before {

@@ -53,3 +53,7 @@ header aside {
   z-index: 2;
   position: relative;
 }
+
+#nav > a {
+  margin-right: 1rem;
+}
