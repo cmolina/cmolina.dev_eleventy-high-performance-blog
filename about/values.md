@@ -2,6 +2,8 @@
 title: My Values
 layout: layouts/base.njk
 templateClass: tmpl-home
+eleventyNavigation:
+    key: My Values
 ---
 Every day we make decisions. Some of these problems are either trivial, there is already a known solution, or picking any option doesn't have a huge impact. For more complex scenarios, it is useful to have a framework to guide you to the best solution.
 

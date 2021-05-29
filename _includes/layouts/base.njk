@@ -63,11 +63,10 @@
       <header>
         <nav id="nav">
           <a href="{{ '/' | url }}" title="Homepage" rel="index">{{ metadata.title }}</a>
-          <a href="/about/values">My Values</a>
-          <!-- {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+          {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
           {%- for entry in collections.all | eleventyNavigation %}
             <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-          {%- endfor %} -->
+          {%- endfor %}
         </nav>
         <h1>{{ title }}</h1>
         {% block extraArticleHeader %}{% endblock %}
