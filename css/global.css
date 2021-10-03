@@ -77,6 +77,7 @@ h1, h2, h3, h4, h5, h6, a {
 h1, h2, h3, h4, h5, h6 {
     font-weight: calc(var(--font-weight) - 100);
     letter-spacing: -0.05rem;
+    margin-top: 2em;
 }
 
 .direct-link {
@@ -135,10 +136,6 @@ header > h1 {
 
 #posts article time {
     font-size: 92.7%;
-}
-
-#posts article p {
-    margin-bottom: 5.25rem;
 }
 
 article > nav {

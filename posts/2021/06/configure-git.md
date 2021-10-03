@@ -52,6 +52,31 @@ which will open a convenient rebase interactive tab when needed, like the one of
 
 ![Screenshot of GitLen's interactive rebase editor](/img/2021/06/interactive-rebase-editor.png)
 
+## Change your default branch name
+The current version of git shows a warning when initializing a new repository with `git init`, as they are moving away from `master`. Since I prefer to use `main`, I made the message disappear by running the following command:
+
+``` bash
+git config --global init.defaultBranch main
+```
+
+## Choose a default strategy for `git pull`
+I am lazy, and when I want to ensure I have the latest changes from a remote repo I just type `git pull` —instead of `git pull --ff-only` command which will bring any commits from origin with a fast-forward. However, this is what git outputs by default:
+
+``` text
+Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+git config pull.rebase false  # merge (the default strategy)
+git config pull.rebase true   # rebase
+git config pull.ff only       # fast-forward only
+```
+
+I use the third option, but feel free to pick your poison.
+
+``` bash
+git config --global pull.ff only
+```
 
 ## Use a global .gitignore file (optional)
 I only had to use this feature once: when I was using a particular tool that generates files to be ignored, but because I was the only coworker using the tool _I was not supposed to modify the committed `.gitignore` file_ 😒🤷🏽‍♂️🤨.
