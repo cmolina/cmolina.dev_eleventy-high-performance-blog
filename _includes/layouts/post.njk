@@ -11,7 +11,12 @@ templateClass: tmpl-post
   <aside>
     {{ wPerMinute | round }} min read.
   </aside>
-  <span>Published <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></span>
+  <span>
+    Published <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+    {% if update and update > page.date %}
+    — Updated on <time datetime="{{ update | htmlDateString }}">{{ update | readableDate }}</time>
+    {% endif %}
+  </span>
 {% endblock %}
 
 {% set shareUrl = metadata.url + page.url %}

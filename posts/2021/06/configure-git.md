@@ -2,6 +2,7 @@
 title: "Configuring git for the first time"
 description: "Do you have a new development laptop and you need to configure git? I got you covered"
 date: 2021-06-14
+update: 2021-10-04
 layout: layouts/post.njk
 ---
 

@@ -3,7 +3,11 @@
     <h2>
       <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
     </h2>
-    <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    Published on <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    {% set update = post.data.update %}
+    {% if update and update > post.date %}
+    — Updated on <time datetime="{{ update | htmlDateString }}">{{ update | readableDate }}</time>
+    {% endif %}
     <p>{{ post.data.description }}</p>
   </article>
 {% endfor %}
