@@ -65,8 +65,8 @@ picture > img {
 
 a {
     text-decoration-color: var(--primary-color-2);
-    text-decoration-thickness: .3rem;
-    text-underline-offset: .1em;
+    text-decoration-thickness: max(.2rem, .16em);
+    text-underline-offset: max(.1rem, .16em);
 }
 
 h1, h2, h3, h4, h5, h6, a {
@@ -80,12 +80,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 2em;
 }
 
-.direct-link {
-    display: none;
-}
-
-*:hover > .direct-link {
-    display: initial;
+@media (hover: hover) {
+    .direct-link {
+        display: none;
+    }
+    
+    *:hover > .direct-link {
+        display: initial;
+    }
 }
 
 blockquote {
