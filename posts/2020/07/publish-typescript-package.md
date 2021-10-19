@@ -31,6 +31,9 @@ git init
 ```
 
 Instruct git to ignore two directories, `node_modules` and `dist` for the dependencies and compiled files, respectively.
+
+<div class="code-filename">.gitignore</div>
+
 ``` text
 node_modules
 dist
@@ -38,6 +41,9 @@ dist
 
 ### Initialize an npm package
 Initialize an npm package by running `npm init` and answering the questions. Ensure your new `package.json` file contains at least this configuration:
+
+<div class="code-filename">package.json</div>
+
 ``` json
 {
     "name": "<your-package-name>",
@@ -60,16 +66,16 @@ This is also a good time to install your dependencies. There are 2 types:
 - `devDependencies`, i.e. the packages needed to compile and test your library, and
 - `dependencies`, i.e. the packages that need to be deployed alongside your library.
 
-For this example, no `dependencies` will be required, but I will need some `devDependencies` for compiling and running the tests:
+For this example, no `dependencies` will be required; but I will need some `devDependencies` for:
+- my favorite test framework and assertion library,
+- @types for better TypeScript experience, and
+- transpiling TypeScript files for testing and production.
 
 ``` bash
-npm i -D \    # install packages as devDependencies
-    @types/chai \   # @types/* for better TypeScript experience
-    @types/mocha \
-    chai \          # BDD assertion library
-    mocha \         # test framework
-    ts-node \       # transpile TypeScript files for testing
-    typescript      # transpile TypeScript files for production
+npm i -D \
+    mocha chai \
+    @types/chai @types/mocha \
+    ts-node typescript
 ```
 
 After running these commands, make sure to keep track of these changes with git: `git add . && git commit -m "Initialized npm package"`.
@@ -77,6 +83,8 @@ After running these commands, make sure to keep track of these changes with git:
 
 ### Initialize a TypeScript project
 Let's initialize a TypeScript project by running `npx tsc --init`. Ensure your new `tsconfig.json` file contains at least this configuration:
+
+<div class="code-filename">tsconfig.json</div>
 
 ``` json
 {
@@ -99,6 +107,8 @@ At this point, we can start writing code and its tests. About time!
 
 Create a new file, `src/index.ts`, and write the code. For example, export a function that sums two numbers:
 
+<div class="code-filename">src/index.ts</div>
+
 ``` typescript
 export function sum(a: number, b: number): number {
     return a + b;
@@ -106,6 +116,8 @@ export function sum(a: number, b: number): number {
 ```
 
 For the tests, you can create a spec under the `test` directory, one spec file for each source code.
+
+<div class="code-filename">test/index.ts</div>
 
 ``` typescript
 import { expect } from 'chai';
@@ -121,6 +133,8 @@ describe('sum', () => {
 ```
 
 Before running the tests, let's configure mocha so it understands TypeScript files. Create a new `.mocharc.jsonc` file with this configuration:
+
+<div class="code-filename">.mocharc.jsonc</div>
 
 ``` json
 {
@@ -146,6 +160,8 @@ In a terminal run `npm login` and fill with your username and password when requ
 Every time a package is published in npm it goes directly into the global scope. And because every package needs to have a unique name, it can be challenging to find an available name for your new package.
 
 To avoid this problem I recommend publishing your package under your username scope (or an org scope if you belong to one). To do this, go back to your `package.json` and change the `name` property,
+
+<div class="code-filename">package.json</div>
 
 ``` diff
 {
