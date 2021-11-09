@@ -75,7 +75,7 @@ const purifyCss = async (rawContent, outputPath) => {
       ],*/
       fontFace: true,
       variables: true,
-      whitelistPatternsChildren: [/:focus$/]
+      whitelistPatternsChildren: [/:focus$/, /:not/]
     });
 
     const after = csso.minify(purged[0].css).css;
