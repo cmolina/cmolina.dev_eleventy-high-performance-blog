@@ -263,7 +263,7 @@ pre .line-highlight {
     display: inline-block;
     margin-left: -.5rem;
     padding-left: .25rem;
-    min-width: min(calc(100vw - 3.875rem), 80ch);
+    min-width: calc(100% + 0.5rem);
     border-left: 0.25em solid var(--highlight-line-border);
 }
 

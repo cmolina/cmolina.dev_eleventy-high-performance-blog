@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 _¡Hola!_ Welcome to my blog. This is a space where I write about the things I learn when doing software. Currently, I work as a software engineer for a living. I like to write code that is simple to read and understand, although I like to delete code even more.
 
-However, there are other things that I like besides computers, and I wanted to expand a little bit in the next sections.
+However, there are other things that I like besides computers, and I wanted to expand a little in the next sections.
 
 In my spare time I enjoy spending time with my spouse Dani, my cat Punto, and with friends and family. I am also practicing some hobbies, here are the most recent.
 
@@ -25,12 +25,12 @@ I have books from other categories that I've enjoyed as well:
 - the biography of Mike Massimino in [Spaceman](https://www.audible.com/pd/B01LZJWYUP). Have you ever wondered what it takes to be an astronaut? This is the story of a kid with a dream, and everything he had to go thorough to reach it.
 
 ## Whittling
-During 2020 I had a sudden realization: I have no idea on _how to work with wood_. I went to a used book store and bought two books, about carving and whittling, and started my first basswood projects. Here are pictures of my creations.
+During 2020 I had a sudden realization: I have no idea on _how to work with wood_. I went to a used book store and bought two books, about carving and whittling, and started my first basswood projects. Here are pictures of my creations, in reverse chronological order:
 
-![A "rubber duck" made of wood](/img/about/me/rubber-duck.jpg)
-![A stylized llama](/img/about/me/llama.jpg)
-![A sit elephant](/img/about/me/elephant.jpg)
 ![The salamander from Frozen 2](/img/about/me/salamander-frozen-2.jpg)
+![A sit elephant](/img/about/me/elephant.jpg)
+![A stylized llama](/img/about/me/llama.jpg)
+![A "rubber duck" made of wood](/img/about/me/rubber-duck.jpg)
 
 
 # Contact Me
