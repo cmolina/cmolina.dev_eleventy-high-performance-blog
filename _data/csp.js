@@ -28,6 +28,7 @@
  */
 
 const SELF = quote("self");
+const ASCIINEMA = "https://asciinema.org";
 
 const CSP = {
   regular: serialize([
@@ -36,11 +37,12 @@ const CSP = {
     // No plugins
     ["object-src", quote("none")],
     // Script from same-origin and inline-hashes.
-    ["script-src", SELF, /* Replaced by csp.js plugin */ "HASHES"],
+    ["script-src", quote("unsafe-hashes"), SELF, ASCIINEMA, /* Replaced by csp.js plugin */ "HASHES"],
     // Inline CSS is allowed.
     ["style-src", quote("unsafe-inline")],
     // Images may also come from data-URIs.
-    ["img-src", SELF, "data:"],
+    ["img-src", SELF, ASCIINEMA, "data:"],
+    ['frame-src', ASCIINEMA],
 
     // To add new rules, add new array literals here or extend those above with
     // additional allowed elements.

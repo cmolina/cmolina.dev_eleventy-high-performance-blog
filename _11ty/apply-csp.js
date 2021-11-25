@@ -52,10 +52,11 @@ const addCspHash = async (rawContent, outputPath) => {
     const dom = new JSDOM(content);
     const cspAble = [
       ...dom.window.document.querySelectorAll("script[csp-hash]"),
+      ...dom.window.document.querySelectorAll("iframe[onload]"),
     ];
 
     const hashes = cspAble.map((element) => {
-      const hash = cspHashGen(element.textContent);
+      const hash = cspHashGen(element.textContent || element.getAttribute('onload'));
       element.setAttribute("csp-hash", hash);
       return quote(hash);
     });

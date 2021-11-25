@@ -165,6 +165,8 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, n);
   });
 
+  eleventyConfig.addShortcode("asciinema", require("./_11ty/asciinema"));
+
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
   eleventyConfig.addCollection("posts", require("./_11ty/getPostList"));
 
