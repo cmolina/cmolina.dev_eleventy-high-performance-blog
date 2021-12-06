@@ -103,6 +103,13 @@ hr + .bio {
     margin-bottom: 25vw !important;
 }
 
+img.profile-picture {
+    border-radius: 50%;
+    width: 15rem;
+    display: block;
+    margin: 1rem auto;
+}
+
 a[rel="prev"]::before {
     background: inherit;
     content: "👈";
@@ -141,13 +148,13 @@ kbd {
 }
 
 header > h1 {
-    font-size: 2.89475rem;
+    font-size: calc(var(--golden-ratio) * var(--golden-ratio) * 1rem);
     line-height: 3.5rem;
     margin: 0 0 2.03rem;
 }
 
 #posts article h2 {
-    font-size: 1.73286rem;
+    font-size: calc(var(--golden-ratio) * 1rem);
     margin: 3.5rem 0 0.4375rem;
 }
 
