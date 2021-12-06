@@ -93,8 +93,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 blockquote {
-    border-left-color: var(--primary-color-1);
-    color: var(--lighter-color);
+    margin-left: 0;
+    padding-left: 1em;
+    border-left: 3px solid var(--primary-color-1);
+    font-style: italic;
 }
 
 hr + .bio {
