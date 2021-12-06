@@ -35,7 +35,7 @@ const path = require("path");
 
 const processImage = async (img, outputPath) => {
   let src = img.getAttribute("src");
-  if (/^(https?\:\/\/|\/\/)/i.test(src)) {
+  if (/^(https?\:\/\/|\/\/)/i.test(src) || /^\w/.test(src)) {
     return;
   }
   if (/^\.+\//.test(src)) {

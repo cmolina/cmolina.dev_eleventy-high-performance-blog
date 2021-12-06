@@ -67,10 +67,11 @@ module.exports = function (eleventyConfig) {
     distPath: "_site",
     assetPath: "/img/remote",
     selector:
-      "img,amp-img,amp-video,meta[property='og:image'],meta[name='twitter:image'],amp-story",
+      "img,amp-img,amp-video,meta[name='twitter:image'],amp-story",
     verbose: false,
   });
 
+  eleventyConfig.addPlugin(require("./_11ty/generateSocialSharingImages.js"));
   eleventyConfig.addPlugin(require("./_11ty/img-dim.js"));
   eleventyConfig.addPlugin(require("./_11ty/json-ld.js"));
   eleventyConfig.addPlugin(require("./_11ty/optimize-html.js"));
@@ -166,6 +167,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("asciinema", require("./_11ty/asciinema"));
+  eleventyConfig.addFilter("firstWordsFrom", require("./_11ty/firstWordsFrom"));
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
   eleventyConfig.addCollection("posts", require("./_11ty/getPostList"));
