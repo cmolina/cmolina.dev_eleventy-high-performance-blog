@@ -103,6 +103,13 @@ hr + .bio {
     margin-bottom: 25vw !important;
 }
 
+img.profile-picture {
+    border-radius: 50%;
+    width: 15rem;
+    display: block;
+    margin: 1rem auto;
+}
+
 a[rel="prev"]::before {
     background: inherit;
     content: "👈";
