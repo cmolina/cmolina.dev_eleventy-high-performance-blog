@@ -32,7 +32,7 @@ describe("check build output for homepage", () => {
       doc = dom.window.document;
     });
 
-    it.skip("should have a top navigation", () => {
+    it("should have a top navigation", () => {
       const navs = Array.from(doc.querySelectorAll("header nav a"));
 
       expect(navs.length).to.be.greaterThan(1);

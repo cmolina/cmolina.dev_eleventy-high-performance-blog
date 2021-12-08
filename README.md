@@ -22,7 +22,8 @@
 
     ```sh
     # build and serve prod assets
-    npm run build && npm run serve
+    npm run build
+    npx -y serve _site
 
     # Checkout http://localhost:5000/,
     # then stop the server and push to prod!
@@ -50,6 +51,7 @@
 - Generates multiple sizes of each image and uses them in **`srcset`**.
 - Generates a **blurry placeholder** for each image (without adding an HTML element or using JS).
 - Transcodes images to [AVIF](<https://en.wikipedia.org/wiki/AV1#AV1_Image_File_Format_(AVIF)>) and [webp](https://developers.google.com/speed/webp) and generates `picture` element.
+- Transcodes GIFs to muted looping autoplaying MP4 videos for greatly reduced file size.
 - **Lazy loads** images (using [native `loading=lazy`](https://web.dev/native-lazy-loading/)).
 - **Async decodes** images (using `decoding=async`).
 - **Lazy layout** of images and placeholders using [`content-visibility: auto`](https://web.dev/content-visibility/#skipping-rendering-work-with-content-visibility).
@@ -59,6 +61,7 @@
 
 #### CSS
 
+- Defaults to the compact "classless" [Bahunya CSS framework](https://kimeiga.github.io/bahunya/).
 - Inlines CSS.
 - Dead-code-eliminates / tree-shakes / purges (pick your favorite word) unused CSS on a per-page basis with [PurgeCSS](https://purgecss.com/).
 - Minified CSS with [csso](https://www.npmjs.com/package/csso).
@@ -83,7 +86,7 @@
 - Supports sending [Core Web Vitals](https://web.dev/vitals/) metrics to Google Analytics as [events](https://github.com/GoogleChrome/web-vitals#send-the-results-to-google-analytics).
 - Support for noscript hit requests.
 - Avoids blocking onload on analytics requests.
-- To turn this on, specify `googleAnalyticsId` in `metadata.json`.
+- To turn this on, specify `googleAnalyticsId` in `metadata.json`. (Note, that this is not compatible with the not-yet-commonly used version 4 of Google Analytics.)
 
 ### DX features
 
@@ -108,7 +111,7 @@
 
 ### Security
 
-Generates a strong CSP for the base template.
+Generates a strong [Content-Security-Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) using HTTP headers.
 
 - Default-src is self.
 - Disallows plugins.
@@ -143,6 +146,8 @@ git commit
 In this case, I haven't modified the template yet so I can safely take the upstream changes. In the future, I will need to review the changes before committing.
 
 ## Apple M1 pre-requisites
-- Install node 15. I used `nvm i node`
-- `sharp` will need `vips` to be installed: `arch -arm64 brew install vips`
+- Install node v16; `nvm i lts/gallium`
+- If you fail to install the dependencies due to `sharp` failing to build, ensure
+  - `arch` returns `arm64`
+  - you uninstall `libvips` with `brew uninstall vips`, or setup the `SHARP_IGNORE_GLOBAL_LIBVIPS` env variable
 - Follow the steps under Quick Start
