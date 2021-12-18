@@ -43,7 +43,9 @@ const CSP = {
     ["style-src", quote("unsafe-inline")],
     // Images may also come from data-URIs.
     ["img-src", SELF, ASCIINEMA, "data:"],
-    ['frame-src', ASCIINEMA],
+    ["frame-src", ASCIINEMA],
+    ["report-uri", "https://cmolinadev.report-uri.com/r/d/csp/enforce"],
+    ["report-to", "default"],
 
     // To add new rules, add new array literals here or extend those above with
     // additional allowed elements.

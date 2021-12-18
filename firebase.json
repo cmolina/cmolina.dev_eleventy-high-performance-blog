@@ -7,24 +7,915 @@
       "**/node_modules/**"
     ],
     "redirects": [
-      { "source": "/posts/demistify-promises", "destination": "/posts/2019/08/demistify-promises", "type": 301 },
-      { "source": "/posts/images-for-every-resolution", "destination": "/posts/2019/07/images-for-every-resolution", "type": 301 },
-      { "source": "/posts/logging-functions", "destination": "/posts/2020/05/logging-functions", "type": 301 },
-      { "source": "/posts/publish-typescript-package", "destination": "/posts/2020/07/publish-typescript-package", "type": 301 },
-      { "source": "/posts/retrying-functions", "destination": "/posts/2020/02/retrying-functions", "type": 301 },
-      { "source": "/posts/return-early", "destination": "/posts/2020/01/return-early", "type": 301 },
-      { "source": "/posts/timeout-functions", "destination": "/posts/2020/06/timeout-functions", "type": 301 }
+      {
+        "source": "/posts/demistify-promises",
+        "destination": "/posts/2019/08/demistify-promises",
+        "type": 301
+      },
+      {
+        "source": "/posts/images-for-every-resolution",
+        "destination": "/posts/2019/07/images-for-every-resolution",
+        "type": 301
+      },
+      {
+        "source": "/posts/logging-functions",
+        "destination": "/posts/2020/05/logging-functions",
+        "type": 301
+      },
+      {
+        "source": "/posts/publish-typescript-package",
+        "destination": "/posts/2020/07/publish-typescript-package",
+        "type": 301
+      },
+      {
+        "source": "/posts/retrying-functions",
+        "destination": "/posts/2020/02/retrying-functions",
+        "type": 301
+      },
+      {
+        "source": "/posts/return-early",
+        "destination": "/posts/2020/01/return-early",
+        "type": 301
+      },
+      {
+        "source": "/posts/timeout-functions",
+        "destination": "/posts/2020/06/timeout-functions",
+        "type": 301
+      }
     ],
     "headers": [
+      /* _headers */
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|js|eot|otf|ttf|ttc|woff|woff2)",
+        "source": "/",
         "headers": [
           {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/how-to-unit-test/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/how-to-unit-test/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/how-to-unit-test/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/how-to-unit-test/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/update-publish-typescript-package/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/update-publish-typescript-package/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/update-publish-typescript-package/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/logs/refs/heads/update-publish-typescript-package/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/how-to-unit-test/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/how-to-unit-test/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/how-to-unit-test/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/how-to-unit-test/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/update-publish-typescript-package/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/update-publish-typescript-package/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/update-publish-typescript-package/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/.git/refs/heads/update-publish-typescript-package/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public,max-age=300"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Report-To",
+            "value": "{\"group\":\"default\",\"max_age\":31536000,\"endpoints\":[{\"url\":\"https://cmolinadev.report-uri.com/a/d/g\"}],\"include_subdomains\":true}"
+          },
+          {
+            "key": "NEL",
+            "value": "{\"report_to\":\"default\",\"max_age\":31536000,\"include_subdomains\":true}"
+          }
+        ]
+      },
+      {
+        "source": "/404.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/me/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/me/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/me/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/me/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/services/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/services/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/services/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/services/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/values/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/values/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/values/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/about/values/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/favicon.svg",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public,max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "/fonts/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      },
+      {
+        "source": "/img/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/js/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      },
+      {
+        "source": "/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/page-list/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/page-list/1/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/page-list/1/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/page-list/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/07/images-for-every-resolution/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/07/images-for-every-resolution/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/07/images-for-every-resolution/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/07/images-for-every-resolution/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/08/demistify-promises/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/08/demistify-promises/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/08/demistify-promises/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2019/08/demistify-promises/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/01/return-early/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/01/return-early/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/01/return-early/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/01/return-early/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/02/retrying-functions/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/02/retrying-functions/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/02/retrying-functions/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/02/retrying-functions/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/05/logging-functions/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/05/logging-functions/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/05/logging-functions/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/05/logging-functions/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/06/timeout-functions/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/06/timeout-functions/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/06/timeout-functions/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/06/timeout-functions/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/07/publish-typescript-package/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/07/publish-typescript-package/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/07/publish-typescript-package/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/07/publish-typescript-package/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/09/create-dark-theme/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/09/create-dark-theme/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/09/create-dark-theme/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2020/09/create-dark-theme/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/05/migrating-from-hey/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/05/migrating-from-hey/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/05/migrating-from-hey/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/05/migrating-from-hey/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/06/configure-git/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/06/configure-git/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/06/configure-git/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/06/configure-git/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/11/configure-terminal/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/11/configure-terminal/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/11/configure-terminal/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/2021/11/configure-terminal/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/posts/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/tags/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/tags/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/tags/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/tags/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
           }
         ]
       }
+      /* end _headers */
     ]
   }
 }
