@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
     .direct-link {
         display: none;
     }
-    
+
     *:hover > .direct-link {
         display: initial;
     }
@@ -168,14 +168,4 @@ article > nav {
     justify-content: space-between;
     list-style: none;
     padding: 0 1rem calc(var(--golden-ratio) * 1rem);
-}
-
-.asciicast {
-    aspect-ratio: var(--golden-ratio) / 1;
-}
-
-.asciicast > :where(iframe:not([hidden]), noscript) {
-    display: block;
-    width: 100%;
-    height: 100%;
 }
