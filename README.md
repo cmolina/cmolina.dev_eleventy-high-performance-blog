@@ -1,6 +1,6 @@
 # Carlos Molina's blog
 
-> _Based on https://github.com/google/eleventy-high-performance-blog_
+> A blog with 100/100 Performance score; _based on https://github.com/google/eleventy-high-performance-blog_
 
 ## 🚀 Quick start
 
@@ -139,11 +139,19 @@ To do the merge, I run
 
 ```sh
 git fetch upstream
-git merge upstream/main main --allow-unrelated-histories --strategy-option=theirs --squash
-git commit
+git merge upstream/main main --allow-unrelated-histories -s subtree --squash
 ```
 
-In this case, I haven't modified the template yet so I can safely take the upstream changes. In the future, I will need to review the changes before committing.
+Then, for each modified file:
+1. Unstage all files
+1. Solve conflicts and stage them
+1. Reset some changes, particularly
+    - new and modified files in directories like `img`, `img/remote`, and `posts`
+    - deleted files, which are files like posts that should remain
+1. For each modified file, bring back the changes that should remain and stage them
+1. For each deleted file, ensure it is not needed anymore before staging them
+
+After this, ensure everything is still working and make a commit with the following message: `chore: Squashed changes from google/eleventy-high-performance-blog`.
 
 ## Apple M1 pre-requisites
 - Install node v16; `nvm i lts/gallium`
