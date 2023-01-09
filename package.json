@@ -42,7 +42,7 @@
     "globby": "^12.0.2",
     "headers-for-firebase": "^1.0.2",
     "jsdom": "^15.1.1",
-    "luxon": "^1.21.3",
+    "luxon": "^2.5.2",
     "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^5.2.5",
     "markdown-it-footnote": "^3.0.2",
