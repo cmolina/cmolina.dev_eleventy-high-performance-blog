@@ -45,6 +45,6 @@ If you want to get in touch please email me at `hi@cmolina.dev`. I will try to d
 
 Do we already know each other? Consider
 - adding me to your _LinkedIn_ network at [Carlos Molina Avendaño](https://www.linkedin.com/in/carlos-molina-avenda%C3%B1o/)
-- following me on _Twitter_ at [@camolin3](https://twitter.com/camolin3). Beware, I _like_ and _retweet_ on lots of subjects besides programming.
+- following me on _Mastodon_ at [@cmolina/@techhub.social](https://elk.zone/techhub.social/@cmolina). Beware, I _like_ and _retweet_ on lots of subjects besides programming.
 
 _¡Chao!_
