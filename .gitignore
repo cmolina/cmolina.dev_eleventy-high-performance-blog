@@ -8,3 +8,4 @@ js/min.js.map
 export
 .firebase/
 firebase-debug.log
+.direnv/
