@@ -205,6 +205,42 @@
         ]
       },
       {
+        "source": "/blog/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/blog/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-Ky9qZOPnMhQV/s7Fdb9TYAOfU4KtWNqCZaFK8tSzXa0=' 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/blog/og-image/",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
+        "source": "/blog/og-image/index.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self';object-src 'none';script-src 'self' https://asciinema.org 'sha256-ACotEtBlkqjCUAsddlA/3p2h7Q0iHuDXxk577uNsXwA=';style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default"
+          }
+        ]
+      },
+      {
         "source": "/favicon.svg",
         "headers": [
           {

@@ -3,7 +3,7 @@ title: My Values
 layout: layouts/base.njk
 templateClass: tmpl-home
 eleventyNavigation:
-    key: My Values
+    key: My Values (EN)
     order: 1
 ---
 Every day we make decisions. Some of these problems are either trivial, there is already a known solution, or picking any option doesn't have a huge impact. For more complex scenarios, it is useful to have a framework to guide you to the best solution.
@@ -27,5 +27,5 @@ This is my personal framework. It is a work in progress and by no means it is co
 
 - **Stoicism**
     When things happens, I want to make sure I focus only in the things that are actually under my control. I try to answer _Given that some event happened, is there anything I can do about it?_
-    
+
     This is by far the most difficult value to apply, although one of the most valuable. I may not be in control of what happens to me, but I can always choose how to react about it. This value helps me assume full responsibility for everything that happens in my life.

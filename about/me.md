@@ -3,7 +3,7 @@ title: About Me
 layout: layouts/base.njk
 templateClass: tmpl-home
 eleventyNavigation:
-    key: About Me
+    key: About Me (EN)
     order: 2
 ---
 _¡Hola!_ Welcome to my blog. This is a space where I write about the things I learn when doing software. Currently, I work as an independent software engineer. I like to write code that is simple to read and understand, although I like to delete code even more.

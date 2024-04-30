@@ -1,5 +1,6 @@
 :root {
     --golden-ratio: 1.618;
+    --line-thickness: max(.2rem, .16em);
 
     --background: #fff;
     --color: #000e;
@@ -18,7 +19,7 @@
         --primary-color-1: #d5f;
         --primary-color-2: #c7f;
         --font-weight: 300;
-        --letter-spacing: 0.006rem;
+        --letter-spacing: .006rem;
     }
 }
 
@@ -47,9 +48,10 @@ body {
 }
 
 p :where(img, video) {
-    width: 100%;
-    height: auto;
-    margin: 1rem 0;
+    display: block;
+    margin: 1rem auto;
+    max-height: 60vh;
+    width: auto;
 }
 
 .centered-content {
@@ -67,7 +69,7 @@ p :where(img, video) {
 
 a {
     text-decoration-color: var(--primary-color-2);
-    text-decoration-thickness: max(.2rem, .16em);
+    text-decoration-thickness: var(--line-thickness);
     text-underline-offset: .32em;
 }
 
@@ -92,22 +94,56 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-blockquote {
+.banner {
+    display: flex;
+    border: var(--line-thickness) solid var(--primary-color-2);
+    padding: 1rem 2rem;
+}
+
+@media (orientation: portrait) {
+  .banner {
+    flex-direction: column-reverse;
+  }
+}
+
+.banner h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.banner blockquote {
     margin-left: 0;
-    padding-left: 1em;
-    border-left: 3px solid var(--primary-color-1);
+    padding-left: 0;
     font-style: italic;
 }
 
-hr + .bio {
-    margin-bottom: 25vw !important;
+.banner .socialnetworks {
+    padding-top: 4rem;
+}
+
+.banner .socialnetworks .handle {
+    font-weight: 400;
+    margin: 0;
+}
+
+.banner .socialnetworks a {
+    margin-right: 1rem;
+}
+
+.banner .socialnetworks svg {
+    height: 3rem;
+    width: 3rem;
+}
+
+.banner .socialnetworks svg path {
+    fill: var(--color);
 }
 
 img.profile-picture {
-    border-radius: 50%;
-    width: 15rem;
     display: block;
     margin: 1rem auto;
+    height: auto;
+    width: 200px;
 }
 
 a[rel="prev"]::before {
@@ -155,7 +191,7 @@ header > h1 {
 
 #posts article h2 {
     font-size: calc(var(--golden-ratio) * 1rem);
-    margin: 3.5rem 0 0.4375rem;
+    margin: 3.5rem 0 .4375rem;
 }
 
 #posts article time {

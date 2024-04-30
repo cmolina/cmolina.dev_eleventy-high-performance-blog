@@ -11,7 +11,6 @@
  */
 main img {
   content-visibility: auto;
-  width: 100%;
 }
 
 /* Avoid the header hiding the content on anchor scroll. */

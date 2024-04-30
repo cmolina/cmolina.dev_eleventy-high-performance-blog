@@ -1,0 +1,21 @@
+---
+title: Blog
+layout: layouts/home.njk
+description: I love working on software as a developer, technical coach, as well as eating veggie food, reading/listening to audiobooks, walk in nature and playing with cats.
+date: Last Modified
+eleventyNavigation:
+  key: Blog (EN)
+  order: 3
+---
+
+<p>
+I love working on software as a developer, technical coach, as well as eating veggie food, reading/listening to audiobooks, walk in nature and playing with cats.
+</p>
+
+<hr>
+
+<div id="posts">
+  <p>Here there is a list with my latest posts:</p>
+  {% set postslist = collections.posts %}
+  {% include "postslist.njk" %}
+</div>
