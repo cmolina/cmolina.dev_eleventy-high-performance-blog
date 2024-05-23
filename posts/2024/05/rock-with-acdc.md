@@ -1,5 +1,6 @@
 ---
 title: "Rock Your Code with AC/DC: Acceptance Criteria Designed Coding"
+description: "Today I am sharing a new technique I’ve been crafting for the past few years, that has allowed me to move fast in projects while maintaining high code quality"
 date: 2024-05-22
 layout: layouts/post.njk
 templateEngineOverride: md
