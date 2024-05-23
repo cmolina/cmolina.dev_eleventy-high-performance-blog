@@ -1,20 +1,23 @@
 ---
-title: Services
+title: Servicios
 layout: layouts/base.njk
 templateClass: tmpl-home
 eleventyNavigation:
-    key: Services
+    key: Servicios
     order: 0
 ---
 
-I engage with development teams and organizations to help them deliver their products and services in time, with quality, accessibility, and maintainability in mind.
+Trabajo con directivos, gerencias, equipos de desarrollo y organizaciones para mejorar la entrega de productos y servicios de software, asegurando una entrega oportuna con un enfoque en la calidad, accesibilidad y mantenibilidad.
 
-I am available for consulting in any of my specialties:
-- JavaScript and TypeScript applications (NodeJS, React, Angular and vanilla JS)
-- Accessibility (talks and workshops, manual and automated testing)
-- Code testing (test driven development, automated testing, refactoring legacy code)
-- prototyping with code
+Mis servicios de consultoría incluyen:
 
-I speak English and Spanish, and currently I am available within UTC -3 or UTC -4, depending on the time of the year. [Look at my current timezone here](https://www.timeanddate.com/worldclock/chile/valparaiso).
+- **Optimización de la Entrega de Software**: Ayudando a las organizaciones a optimizar sus procesos de desarrollo de software para entregar mejor software, más rápido.
+- **Coaching en Liderazgo Técnico**: Guiando a ejecutivos y líderes técnicos para construir y liderar equipos efectivos y de alto rendimiento.
+- **Pruebas de Código**: Implementación de desarrollo basado en pruebas, pruebas automatizadas y refactorización de código legado para mejorar la fiabilidad y mantenibilidad.
+- **Aplicaciones JavaScript y TypeScript**: Experto en NodeJS, React, Angular y vanilla JS.
+- **Accesibilidad**: Ofreciendo charlas, talleres y pruebas tanto manuales como automatizadas para asegurar que tu software sea accesible para todos los usuarios.
+- **Prototipos con Código**: Desarrollo rápido de prototipos para validar ideas y acelerar el desarrollo de productos.
 
-If you would like to hire me for one of the above specialties, email me at `hi@cmolina.dev` and I will do my best to get back to you as soon as I can.
+Hablo inglés y español, y estoy disponible para servicios de consultoría dentro del huso horario UTC -3 o UTC -4, dependiendo de la época del año. [Consulta mi huso horario actual aquí](https://www.timeanddate.com/worldclock/chile/temuco).
+
+Si estás interesado en mis servicios de consultoría, por favor envíame un correo electrónico a `hola@cmolina.dev` para que coordinemos una sesión inicial.
