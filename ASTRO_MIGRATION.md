@@ -43,7 +43,7 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
   - [x] Port font preloading (`<link rel="preload">`)
   - [x] Port canonical URL using `Astro.url`
   - [x] Port RSS autodiscovery link
-  - [ ] Port Google Analytics script (conditional on env var)
+  - [x] ~~Port Google Analytics script~~ — dropped, GA unused
   - [ ] Port dark mode CSS variables
   - [x] Port navigation header
   - [x] Delete `_includes/layouts/base.njk`
@@ -162,13 +162,7 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 - [ ] Verify all canonical URLs are correct
 - [ ] **Commit phase 12**
 
-## Phase 13: Analytics `[Checkpoint D]`
-
-- [ ] Port Google Analytics conditional loading (skip in dev)
-- [ ] Configure Netlify/Firebase proxy for GA script if needed
-- [ ] Port Core Web Vitals reporting
-- [ ] Port noScript fallback
-- [ ] **Commit phase 13**
+## ~~Phase 13: Analytics~~ — dropped, GA unused
 
 ## Phase 14: Final Eleventy Removal
 
