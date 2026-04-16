@@ -62,16 +62,16 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 4: Pages & Routing `[Checkpoint B → C]`
 
-- [ ] Create `src/pages/index.astro` from `index.njk` — delete `index.njk` after porting
-- [ ] Create `src/pages/blog/index.astro` from `archive.njk` — delete `archive.njk` after porting
-- [ ] Create `src/pages/blog/[slug].astro` for post detail pages
-- [ ] Create `src/pages/tags/index.astro` from `tags-list.njk` — delete `tags-list.njk` after porting
-- [ ] Create `src/pages/tags/[tag].astro` from `tags.njk` with `getStaticPaths` — delete `tags.njk` after porting
-- [ ] Create `src/pages/404.astro` from `404.md` — delete `404.md` after porting
-- [ ] Implement prev/next post logic using sorted collection index
+- [x] Create `src/pages/index.astro` from `index.njk` — delete `index.njk` after porting
+- [x] Create `src/pages/blog/index.astro` from `archive.njk` — delete `archive.njk` after porting
+- [x] Create `src/pages/blog/[...slug].astro` for post detail pages (rest param — IDs are `YYYY/MM/slug`)
+- [x] Create `src/pages/tags/index.astro` from `tags-list.njk` — delete `tags-list.njk` after porting
+- [x] Create `src/pages/tags/[tag].astro` from `tags.njk` with `getStaticPaths` — delete `tags.njk` after porting
+- [x] Create `src/pages/404.astro` from `404.md` — delete `404.md` after porting
+- [x] Implement prev/next post logic using sorted collection index
 - [ ] Verify all legacy URL paths still resolve (check Firebase redirects)
 - [ ] Delete `og-image.njk` (replaced in Phase 11)
-- [ ] **Commit phase 4**
+- [x] **Commit phase 4**
 
 ## Phase 5: CSS & Styling `[Checkpoint D]`
 

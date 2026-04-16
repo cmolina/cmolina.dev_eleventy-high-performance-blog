@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import { isPublished, sortByDate } from '../../utils/posts';
+import Home from '../../layouts/Home.astro';
+import PostsList from '../../components/PostsList.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+  const published = allPosts.filter(isPublished);
+
+  const tagMap = new Map<string, typeof published>();
+  for (const post of published) {
+    for (const tag of post.data.tags ?? []) {
+      if (!tagMap.has(tag)) tagMap.set(tag, []);
+      tagMap.get(tag)!.push(post);
+    }
+  }
+
+  return [...tagMap.entries()].map(([tag, posts]) => ({
+    params: { tag },
+    props: { tag, posts: sortByDate(posts) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<Home title={`Tagged "${tag}"`}>
+  <h1>Tagged &ldquo;{tag}&rdquo;</h1>
+  <PostsList posts={posts} />
+  <p>See <a href="/tags/">all tags</a>.</p>
+</Home>

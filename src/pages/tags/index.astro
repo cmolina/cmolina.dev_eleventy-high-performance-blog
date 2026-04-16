@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import { isPublished } from '../../utils/posts';
+import Home from '../../layouts/Home.astro';
+
+const allPosts = await getCollection('posts');
+const published = allPosts.filter(isPublished);
+
+const tags = [...new Set(published.flatMap((p) => p.data.tags ?? []))].sort();
+---
+
+<Home title="Tags">
+  <h1>Tags</h1>
+  {tags.map((tag) => (
+    <a href={`/tags/${tag}/`} class="post-tag">{tag}</a>
+  ))}
+</Home>
