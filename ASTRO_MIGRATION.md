@@ -44,14 +44,14 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
   - [x] Port canonical URL using `Astro.url`
   - [x] Port RSS autodiscovery link
   - [x] ~~Port Google Analytics script~~ — dropped, GA unused
-  - [ ] Port dark mode CSS variables
+  - [x] Port dark mode CSS variables
   - [x] Port navigation header
   - [x] Delete `_includes/layouts/base.njk`
 - [x] Create `src/layouts/Post.astro` from `_includes/layouts/post.njk`
   - [x] Port read time calculation (240 wpm)
   - [x] Port publish/update date display
   - [x] Port prev/next navigation
-  - [ ] Port share button (navigator.share + clipboard + Twitter fallback)
+  - [x] Port share button (navigator.share + clipboard fallback — Twitter fallback dropped)
   - [x] Port GitHub source link in footer
   - [x] Delete `_includes/layouts/post.njk`
 - [x] Create `src/layouts/Home.astro` from `_includes/layouts/home.njk` — delete after porting
