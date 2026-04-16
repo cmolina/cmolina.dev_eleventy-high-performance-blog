@@ -38,27 +38,27 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 3: Layouts & Components `[Checkpoint B]`
 
-- [ ] Create `src/layouts/Base.astro` from `_includes/layouts/base.njk`
-  - [ ] Port OG/Twitter meta tags
-  - [ ] Port font preloading (`<link rel="preload">`)
-  - [ ] Port canonical URL using `Astro.url`
-  - [ ] Port RSS autodiscovery link
+- [x] Create `src/layouts/Base.astro` from `_includes/layouts/base.njk`
+  - [x] Port OG/Twitter meta tags
+  - [x] Port font preloading (`<link rel="preload">`)
+  - [x] Port canonical URL using `Astro.url`
+  - [x] Port RSS autodiscovery link
   - [ ] Port Google Analytics script (conditional on env var)
   - [ ] Port dark mode CSS variables
-  - [ ] Port navigation header
-  - [ ] Delete `_includes/layouts/base.njk`
-- [ ] Create `src/layouts/Post.astro` from `_includes/layouts/post.njk`
-  - [ ] Port read time calculation (240 wpm)
-  - [ ] Port publish/update date display
-  - [ ] Port prev/next navigation
+  - [x] Port navigation header
+  - [x] Delete `_includes/layouts/base.njk`
+- [x] Create `src/layouts/Post.astro` from `_includes/layouts/post.njk`
+  - [x] Port read time calculation (240 wpm)
+  - [x] Port publish/update date display
+  - [x] Port prev/next navigation
   - [ ] Port share button (navigator.share + clipboard + Twitter fallback)
-  - [ ] Port GitHub source link in footer
-  - [ ] Delete `_includes/layouts/post.njk`
-- [ ] Create `src/layouts/Home.astro` from `_includes/layouts/home.njk` — delete after porting
-- [ ] Create `src/components/PostsList.astro` from `_includes/postslist.njk` — delete after porting
-- [ ] Create `src/components/Clap.astro` from `_includes/clap.njk` — delete after porting
-- [ ] Delete `_includes/layouts/` if empty
-- [ ] **Commit phase 3**
+  - [x] Port GitHub source link in footer
+  - [x] Delete `_includes/layouts/post.njk`
+- [x] Create `src/layouts/Home.astro` from `_includes/layouts/home.njk` — delete after porting
+- [x] Create `src/components/PostsList.astro` from `_includes/postslist.njk` — delete after porting
+- [x] Create `src/components/Clap.astro` from `_includes/clap.njk` — delete after porting
+- [x] Delete `_includes/layouts/` if empty
+- [x] **Commit phase 3**
 
 ## Phase 4: Pages & Routing `[Checkpoint B → C]`
 

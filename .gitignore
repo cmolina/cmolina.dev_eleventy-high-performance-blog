@@ -9,3 +9,4 @@ export
 .firebase/
 firebase-debug.log
 .direnv/
+dist/

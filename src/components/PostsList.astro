@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'posts'>[];
+}
+
+const { posts } = Astro.props;
+
+function readableDate(date: Date): string {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function htmlDateString(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+---
+
+{posts.map((post) => (
+  <article>
+    <h2>
+      <a href={`/blog/${post.id}`}>{post.data.title}</a>
+    </h2>
+    Published on <time datetime={htmlDateString(post.data.date)}>{readableDate(post.data.date)}</time>
+    {post.data.update && post.data.update > post.data.date && (
+      <> — Updated on <time datetime={htmlDateString(post.data.update)}>{readableDate(post.data.update)}</time></>
+    )}
+    {post.data.description && <p>{post.data.description}</p>}
+  </article>
+))}
