@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import { isPublished, sortByDate } from '../../utils/posts';
+
+const allPosts = await getCollection('posts');
+const posts = sortByDate(allPosts.filter(isPublished));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <h1>Blog</h1>
+    <ul>
+      {posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          <time datetime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+        </li>
+      ))}
+    </ul>
+  </body>
+</html>
