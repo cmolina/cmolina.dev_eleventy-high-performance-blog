@@ -53,6 +53,11 @@ body {
     min-height: 100vh;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 p :where(img, video) {
     display: block;
     margin: 1rem auto;
@@ -150,6 +155,7 @@ img.profile-picture {
     margin: 1rem auto;
     height: auto;
     width: 200px;
+    align-self: center;
 }
 
 a[rel="prev"]::before {
