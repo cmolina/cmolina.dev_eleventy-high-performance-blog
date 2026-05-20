@@ -80,10 +80,10 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 - [x] Import global styles in `Base.astro`
 - [x] Drop `purgecss`, `csso`, `clean-css` from `package.json` (Vite handles minification)
 - [x] Drop `prism-coy-a11y.css` (replaced by rehype-pretty-code theme)
-- [ ] Evaluate `astro-critters` for CSS inlining if CWV score requires it
-- [ ] Verify dark mode still works
-- [ ] Verify code block styling
-- [ ] **Commit phase 5**
+- [ ] Evaluate `astro-critters` for CSS inlining if CWV score requires it (deferred to Phase 15)
+- [x] Verify dark mode still works
+- [x] Verify code block styling (fix: add missing CSS vars --code-border-color/--constant-color from dropped prism CSS; update selectors to rehype-pretty-code attrs)
+- [x] **Commit phase 5**
 
 ## Phase 6: Image Optimization `[Checkpoint D]`
 
