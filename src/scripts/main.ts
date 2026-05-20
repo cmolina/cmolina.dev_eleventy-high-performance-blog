@@ -22,46 +22,44 @@ function prefetch(e: Event): void {
 document.documentElement.addEventListener('mouseover', prefetch, { capture: true, passive: true });
 document.documentElement.addEventListener('touchstart', prefetch, { capture: true, passive: true });
 
-if (window.ResizeObserver && document.querySelector('header nav #nav')) {
-  const progress = document.getElementById('reading-progress');
-  if (progress) {
-    let timeOfLastScroll = 0;
-    let requestedAniFrame = false;
-    let winHeight = 1000;
-    let bottom = 10000;
+const progress = document.getElementById('reading-progress');
+if (window.ResizeObserver && progress) {
+  let timeOfLastScroll = 0;
+  let requestedAniFrame = false;
+  let winHeight = 1000;
+  let bottom = 10000;
 
-    function updateProgress(): void {
-      requestedAniFrame = false;
-      const percent = Math.min(
-        (document.scrollingElement!.scrollTop / (bottom - winHeight)) * 100,
-        100,
-      );
-      progress!.style.transform = `translate(-${100 - percent}vw, 0)`;
-      if (Date.now() - timeOfLastScroll < 3000) {
-        requestAnimationFrame(updateProgress);
-        requestedAniFrame = true;
-      }
+  function updateProgress(): void {
+    requestedAniFrame = false;
+    const percent = Math.min(
+      (document.scrollingElement!.scrollTop / (bottom - winHeight)) * 100,
+      100,
+    );
+    progress!.style.transform = `translate(-${100 - percent}vw, 0)`;
+    if (Date.now() - timeOfLastScroll < 3000) {
+      requestAnimationFrame(updateProgress);
+      requestedAniFrame = true;
     }
-
-    function scroll(): void {
-      if (!requestedAniFrame) {
-        requestAnimationFrame(updateProgress);
-        requestedAniFrame = true;
-      }
-      timeOfLastScroll = Date.now();
-    }
-
-    addEventListener('scroll', scroll);
-
-    new ResizeObserver(() => {
-      const marker = document.querySelector('#comments,footer');
-      if (marker) {
-        bottom = document.scrollingElement!.scrollTop + marker.getBoundingClientRect().top;
-      }
-      winHeight = window.innerHeight;
-      scroll();
-    }).observe(document.body);
   }
+
+  function scroll(): void {
+    if (!requestedAniFrame) {
+      requestAnimationFrame(updateProgress);
+      requestedAniFrame = true;
+    }
+    timeOfLastScroll = Date.now();
+  }
+
+  addEventListener('scroll', scroll);
+
+  new ResizeObserver(() => {
+    const marker = document.querySelector('#comments,footer');
+    if (marker) {
+      bottom = document.scrollingElement!.scrollTop + marker.getBoundingClientRect().top;
+    }
+    winHeight = window.innerHeight;
+    scroll();
+  }).observe(document.body);
 }
 
 document.body.addEventListener(
