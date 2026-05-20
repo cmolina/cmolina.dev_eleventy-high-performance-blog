@@ -12,7 +12,7 @@ const { posts } = Astro.props;
 {posts.map((post) => (
   <article>
     <h2>
-      <a href={`/blog/${post.id}`}>{post.data.title}</a>
+      <a href={`/posts/${post.id}/`}>{post.data.title}</a>
     </h2>
     Published on <time datetime={htmlDateString(post.data.date)}>{readableDate(post.data.date)}</time>
     {post.data.update && post.data.update > post.data.date && (

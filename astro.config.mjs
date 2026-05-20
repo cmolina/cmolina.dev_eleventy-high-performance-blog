@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap';
 import rehypePrettyCode from 'rehype-pretty-code';
 import remarkFootnotes from 'remark-footnotes';
 import { execSync } from 'child_process';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 const SITE_URL = 'https://cmolina.dev';
 const SITE_WIDE_UPDATE = new Date('2020-07-12');
@@ -19,15 +21,15 @@ function gitLastMod(filePath) {
 
 function urlToFilePath(url) {
   const path = url.replace(SITE_URL, '').replace(/\/$/, '') || '/';
-  const blogMatch = path.match(/^\/blog\/(\d{4}\/\d{2}\/.+)$/);
-  if (blogMatch) return `src/content/posts/${blogMatch[1]}.md`;
+  const postsMatch = path.match(/^\/posts\/(\d{4}\/\d{2}\/.+)$/);
+  if (postsMatch) return `src/content/posts/${postsMatch[1]}.md`;
   const map = {
     '/': 'src/pages/index.astro',
     '/blog': 'src/pages/blog/index.astro',
     '/tags': 'src/pages/tags/index.astro',
-    '/me': 'src/pages/me.astro',
-    '/services': 'src/pages/services.astro',
-    '/values': 'src/pages/values.astro',
+    '/about/me': 'src/pages/about/me.astro',
+    '/about/services': 'src/pages/about/services.astro',
+    '/about/values': 'src/pages/about/values.astro',
   };
   return map[path] ?? null;
 }
@@ -60,6 +62,14 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkFootnotes],
-    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
+    rehypePlugins: [
+      [rehypePrettyCode, prettyCodeOptions],
+      rehypeSlug,
+      [rehypeAutolinkHeadings, {
+        behavior: 'append',
+        properties: { className: ['direct-link'], ariaHidden: 'true', tabIndex: -1 },
+        content: { type: 'text', value: ' ¶' },
+      }],
+    ],
   },
 });

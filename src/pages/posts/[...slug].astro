@@ -12,10 +12,10 @@ export async function getStaticPaths() {
     props: {
       post,
       prevPost: index < posts.length - 1
-        ? { url: `/blog/${posts[index + 1].id}`, title: posts[index + 1].data.title }
+        ? { url: `/posts/${posts[index + 1].id}/`, title: posts[index + 1].data.title }
         : undefined,
       nextPost: index > 0
-        ? { url: `/blog/${posts[index - 1].id}`, title: posts[index - 1].data.title }
+        ? { url: `/posts/${posts[index - 1].id}/`, title: posts[index - 1].data.title }
         : undefined,
     },
   }));
