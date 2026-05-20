@@ -26,7 +26,8 @@ const {
 
 const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 const canonicalUrl = `${SITE_URL}${pageUrl}`;
-const ogImage = ogImageProp ?? `${SITE_URL}/img/social${pageUrl}og-image.png`;
+const ogSlug = pageUrl === '/' ? 'home' : pageUrl.replace(/^\/|\/$/g, '');
+const ogImage = ogImageProp ?? `${SITE_URL}/og/${ogSlug}.png`;
 const isDev = import.meta.env.DEV;
 ---
 

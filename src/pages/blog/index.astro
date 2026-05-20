@@ -1,4 +1,9 @@
 ---
+export const meta = {
+  title: 'Blog',
+  description: 'I love working on software as a developer, technical coach, as well as eating veggie food, reading/listening to audiobooks, walk in nature and playing with cats.',
+};
+
 import { getCollection } from 'astro:content';
 import { isPublished, sortByDate } from '../../utils/posts';
 import Home from '../../layouts/Home.astro';

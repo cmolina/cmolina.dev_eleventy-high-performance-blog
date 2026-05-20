@@ -5,15 +5,33 @@ import sharp from 'sharp';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
+type PageModule = { meta?: { title?: string; description?: string } };
+
+function filePathToOgSlug(filePath: string): string {
+  const withoutExt = filePath.replace(/\.astro$/, '');
+  const withoutPrefix = withoutExt.replace(/^\.\.\//, '');
+  const withoutTrailingIndex = withoutPrefix.replace(/\/index$/, '');
+  return withoutTrailingIndex === 'index' ? 'home' : withoutTrailingIndex;
+}
+
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
-  return posts.map((post) => ({
+  const postPaths = posts.map((post) => ({
     params: { slug: post.id },
-    props: {
-      title: post.data.title,
-      description: post.data.description,
-    },
+    props: { title: post.data.title, description: post.data.description },
   }));
+
+  const pageModules = import.meta.glob<PageModule>('../**/*.astro', { eager: true });
+  const pagePaths = Object.entries(pageModules)
+    .filter(([filePath]) => !filePath.includes('['))
+    .flatMap(([filePath, mod]) => {
+      if (!mod.meta) return [];
+      const { title, description } = mod.meta;
+      if (!title) throw new Error(`${filePath} exports meta without a title`);
+      return [{ params: { slug: filePathToOgSlug(filePath) }, props: { title, description } }];
+    });
+
+  return [...postPaths, ...pagePaths];
 }
 
 export const GET: APIRoute = async ({ props }) => {
