@@ -137,14 +137,18 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 10: Security & Headers `[Checkpoint D]`
 
-- [ ] Move CSP header rules to `firebase.json` `headers` array
-- [ ] Pre-compute CSP hashes for known inline scripts and hardcode
-- [ ] Evaluate nonce-based CSP with Astro middleware if hash approach is too brittle
-- [ ] Port X-Frame-Options, X-Content-Type-Options, XSS headers to host config
-- [ ] Delete `_11ty/apply-csp.js`
-- [ ] Delete `_data/csp.js`
-- [ ] Delete `_11ty/` if empty; delete `_data/` if empty
-- [ ] **Commit phase 10**
+> **Deployment target: Cloudflare Pages** (not Firebase). Headers live in `public/_headers`; redirects in `public/_redirects` — both are copied to `dist/` by Astro.
+
+- [x] Create `public/_headers` with unified `/*` CSP rule — no per-page hashes needed (Astro bundles all scripts externally, no `is:inline`)
+- [x] Update `/js/*` → `/_astro/*` for Vite asset immutable caching
+- [x] Port X-Frame-Options, X-Content-Type-Options, XSS, Report-To, NEL to `public/_headers`
+- [x] Create `public/_redirects` from firebase.json redirects (Cloudflare format)
+- [x] Strip headers/redirects from `firebase.json` (legacy, kept as stub until Phase 14 removes it)
+- [x] Delete root-level `_headers` (Eleventy build artifact)
+- [x] Delete `_11ty/apply-csp.js`
+- [x] Delete `_data/csp.js`
+- [ ] Delete `_11ty/` if empty; delete `_data/` if empty — deferred to Phase 14
+- [x] **Commit phase 10**
 
 ## Phase 11: OG Images `[Checkpoint D]`
 
@@ -199,12 +203,17 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 - [ ] Test 404 page
 - [ ] Check all legacy redirects still work
 
-## Phase 16: Deploy
+## Phase 16: Deploy (Cloudflare Pages)
 
-- [ ] Update `firebase.json` for Astro static output directory
-- [ ] Update build scripts in `package.json`
+- [ ] Add `@astrojs/cloudflare` adapter (or keep static output — verify CF Pages supports `output: 'static'`)
+- [ ] Update `astro.config.mjs` `outDir` if needed (default `dist/` matches CF Pages)
+- [ ] Update build command in CF Pages dashboard: `npm run build` → output dir `dist`
+- [ ] Update `package.json` build scripts to remove Eleventy-specific steps
+- [ ] Delete `firebase.json` (legacy stub, no longer needed)
+- [ ] Delete `netlify.toml` (legacy)
 - [ ] Run prod build and verify no errors
-- [ ] Deploy to staging and smoke test
+- [ ] Verify `dist/_headers` and `dist/_redirects` are present in build output
+- [ ] Deploy to CF Pages staging and smoke test
 - [ ] Deploy to production
 - [ ] **Commit phase 16 / tag release**
 

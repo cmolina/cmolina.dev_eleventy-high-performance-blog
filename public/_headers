@@ -1,4 +1,5 @@
 /*
+  Content-Security-Policy: default-src 'self';object-src 'none';script-src 'self' https://asciinema.org;style-src 'unsafe-inline';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default
   cache-control: public,max-age=300
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
@@ -8,13 +9,12 @@
 
 /img/*
   cache-control: public,max-age=31536000,immutable
-/js/*
+
+/_astro/*
   cache-control: public,max-age=31536000,immutable
+
 /fonts/*
   cache-control: public,max-age=31536000,immutable
+
 /favicon.svg
   cache-control: public,max-age=3600
-
-# [csp headers]
-# this text will be replaced by apply-csp.js plugin
-# [end csp headers]
