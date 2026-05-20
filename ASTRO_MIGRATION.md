@@ -75,10 +75,10 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 5: CSS & Styling `[Checkpoint D]`
 
-- [ ] Copy `css/` → `src/styles/` — delete `css/` after copy
-- [ ] Import global styles in `Base.astro`
-- [ ] Drop `purgecss`, `csso`, `clean-css` from `package.json` (Vite handles minification)
-- [ ] Drop `prism-coy-a11y.css` (replaced by rehype-pretty-code theme)
+- [x] Copy `css/` → `src/styles/` — delete `css/` after copy
+- [x] Import global styles in `Base.astro`
+- [x] Drop `purgecss`, `csso`, `clean-css` from `package.json` (Vite handles minification)
+- [x] Drop `prism-coy-a11y.css` (replaced by rehype-pretty-code theme)
 - [ ] Evaluate `astro-critters` for CSS inlining if CWV score requires it
 - [ ] Verify dark mode still works
 - [ ] Verify code block styling
