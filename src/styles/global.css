@@ -179,12 +179,24 @@ kbd {
 }
 
 figure[data-rehype-pretty-code-figure] pre {
+    background-color: #24292e;
     border-left: .2rem solid var(--primary-color-2);
+    color: #e1e4e8;
     font-family: var(--mono-font);
     font-size: .95em;
     line-height: 1.5;
     overflow-x: auto;
     padding: 1rem;
+}
+
+figure[data-rehype-pretty-code-figure] code,
+figure[data-rehype-pretty-code-figure] span {
+    background-color: #24292e;
+}
+
+/* github-dark comment color #6A737D is 3.04:1 — override to WCAG AA compliant (#8B949E = 4.78:1) */
+figure[data-rehype-pretty-code-figure] span[style*="#6A737D"] {
+    color: #8B949E !important;
 }
 
 [data-rehype-pretty-code-title] {

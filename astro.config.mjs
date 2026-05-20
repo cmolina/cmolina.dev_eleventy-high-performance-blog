@@ -44,6 +44,7 @@ function sitemapLastmod(url) {
 /** @type {import('rehype-pretty-code').Options} */
 const prettyCodeOptions = {
   theme: 'github-dark',
+  keepBackground: false,
 };
 
 export default defineConfig({
