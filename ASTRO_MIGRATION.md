@@ -163,11 +163,11 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 12: SEO & Structured Data `[Checkpoint D]`
 
-- [ ] Port JSON-LD Article schema into `Post.astro` using `<script type="application/ld+json">`
-- [ ] Verify `@astrojs/sitemap` generates correct sitemap with lastmod dates
-- [ ] Port favicon logic (dev vs prod, SVG favicon, theme color)
-- [ ] Verify all canonical URLs are correct
-- [ ] **Commit phase 12**
+- [x] Port JSON-LD Article schema into `Post.astro` using `<script type="application/ld+json">`
+- [x] Verify `@astrojs/sitemap` generates correct sitemap with lastmod dates (serialize via git log -1)
+- [x] Port favicon logic (dev vs prod, SVG favicon, theme color)
+- [x] Verify all canonical URLs are correct (fixed trailing slash on post canonicals)
+- [x] **Commit phase 12**
 
 ## ~~Phase 13: Analytics~~ — dropped, GA unused
 
