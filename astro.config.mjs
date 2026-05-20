@@ -15,6 +15,9 @@ export default defineConfig({
     mdx(),
     sitemap(),
   ],
+  image: {
+    domains: [],
+  },
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkFootnotes],

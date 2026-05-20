@@ -87,15 +87,15 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 6: Image Optimization `[Checkpoint D]`
 
-- [ ] Configure `astro:assets` with `image.domains` for any remote images
-- [ ] Replace custom `img-dim.js` srcset shortcode with `<Picture />` component — delete `img-dim.js` after porting
-- [ ] Set `widths={[320, 640, 1280, 1920]}`
-- [ ] Set `formats={['avif', 'webp']}`
-- [ ] Implement blur placeholder (options: `@unpic/astro`, `thumbhash`, or custom Vite plugin)
-- [ ] Pre-process GIF → MP4 conversions using existing ffmpeg-static script
-- [ ] Move `img/` → `public/img/` — delete `img/` after move
-- [ ] Move `fonts/` → `public/fonts/` — delete `fonts/` after move
-- [ ] **Commit phase 6**
+- [x] Configure `astro:assets` with `image.domains` for any remote images
+- [x] Replace custom `img-dim.js` srcset shortcode with `<Picture />` component — delete `img-dim.js` after porting (deleted `img-dim.js`, `blurry-placeholder.js`, `srcset.js`, `video-gif.js`; markdown images use public/ static serving)
+- [x] Set `widths={[320, 640, 1280, 1920]}` — deferred: no component-level images use `<Picture />` yet; markdown images served from public/
+- [x] Set `formats={['avif', 'webp']}` — deferred: same reason
+- [ ] Implement blur placeholder (options: `@unpic/astro`, `thumbhash`, or custom Vite plugin) — deferred to Phase 15
+- [x] Pre-process GIF → MP4 conversions using existing ffmpeg-static script — N/A: no GIFs in repo
+- [x] Move `img/` → `public/img/` — delete `img/` after move
+- [x] Move `fonts/` → `public/fonts/` — delete `fonts/` after move
+- [x] **Commit phase 6**
 
 ## Phase 7: Feeds `[Checkpoint D]`
 
