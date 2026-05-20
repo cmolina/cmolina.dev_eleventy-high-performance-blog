@@ -69,6 +69,7 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 - [x] Create `src/pages/tags/[tag].astro` from `tags.njk` with `getStaticPaths` — delete `tags.njk` after porting
 - [x] Create `src/pages/404.astro` from `404.md` — delete `404.md` after porting
 - [x] Implement prev/next post logic using sorted collection index
+- [x] Create `src/pages/[slug].astro` for static pages collection (`/services`, `/me`, `/values`)
 - [ ] Verify all legacy URL paths still resolve (check Firebase redirects)
 - [ ] Delete `og-image.njk` (replaced in Phase 11)
 - [x] **Commit phase 4**
