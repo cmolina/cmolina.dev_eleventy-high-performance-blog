@@ -99,12 +99,12 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 7: Feeds `[Checkpoint D]`
 
-- [ ] Install `@astrojs/rss`
-- [ ] Create `src/pages/feed/feed.xml.ts` (Atom/RSS feed)
-- [ ] Create `src/pages/feed/feed.json.ts` (JSON Feed — custom endpoint)
-- [ ] Remove `@11ty/eleventy-plugin-rss` from `package.json`
+- [x] Install `@astrojs/rss`
+- [x] Create `src/pages/feed/feed.xml.ts` (Atom/RSS feed)
+- [x] Create `src/pages/feed/feed.json.ts` (JSON Feed — custom endpoint)
+- [x] Remove `@11ty/eleventy-plugin-rss` from `package.json`
 - [ ] Verify feed validates at validator.w3.org/feed/
-- [ ] **Commit phase 7**
+- [x] **Commit phase 7**
 
 ## Phase 8: Utility Functions `[Checkpoint B]` (replaces Eleventy filters)
 
