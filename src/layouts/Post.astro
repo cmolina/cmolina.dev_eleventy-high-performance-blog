@@ -1,5 +1,7 @@
 ---
 import Base from './Base.astro';
+import { readableDate, htmlDateString } from '../utils/dates';
+import { readTime } from '../utils/readTime';
 
 interface Props {
   title: string;
@@ -19,16 +21,7 @@ const PUBLISHER_NAME = 'Carlos Andrés Molina Avendaño';
 
 const { title, description, date, update, slug, body, prevPost, nextPost } = Astro.props;
 
-const wordCount = body.split(/\s+/).length;
-const readMinutes = Math.round(wordCount / 240) + 1;
-
-function readableDate(d: Date): string {
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-}
-
-function htmlDateString(d: Date): string {
-  return d.toISOString().split('T')[0];
-}
+const readMinutes = readTime(body);
 
 const pageUrl = `/blog/${slug}`;
 const shareUrl = `${SITE_URL}${pageUrl}`;

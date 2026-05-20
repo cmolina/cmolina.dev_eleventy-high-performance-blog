@@ -1,0 +1,11 @@
+export function readableDate(date: Date): string {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+export function htmlDateString(date: Date): string {
+  return date.toISOString().split('T')[0];
+}
+
+export function sitemapDateTimeString(date: Date): string {
+  return date.toISOString();
+}

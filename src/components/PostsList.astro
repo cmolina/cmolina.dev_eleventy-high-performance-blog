@@ -1,19 +1,12 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { readableDate, htmlDateString } from '../utils/dates';
 
 interface Props {
   posts: CollectionEntry<'posts'>[];
 }
 
 const { posts } = Astro.props;
-
-function readableDate(date: Date): string {
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-}
-
-function htmlDateString(date: Date): string {
-  return date.toISOString().split('T')[0];
-}
 ---
 
 {posts.map((post) => (

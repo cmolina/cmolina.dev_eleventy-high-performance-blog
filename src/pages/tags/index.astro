@@ -1,12 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 import { isPublished } from '../../utils/posts';
+import { getUniqueTags } from '../../utils/tags';
 import Home from '../../layouts/Home.astro';
 
 const allPosts = await getCollection('posts');
 const published = allPosts.filter(isPublished);
 
-const tags = [...new Set(published.flatMap((p) => p.data.tags ?? []))].sort();
+const tags = getUniqueTags(published);
 ---
 
 <Home title="Tags">

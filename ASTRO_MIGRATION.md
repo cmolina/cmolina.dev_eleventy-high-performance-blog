@@ -108,17 +108,17 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 8: Utility Functions `[Checkpoint B]` (replaces Eleventy filters)
 
-- [ ] Create `src/utils/dates.ts`
-  - [ ] `readableDate(date)` using `Intl.DateTimeFormat`
-  - [ ] `htmlDateString(date)` → `date.toISOString().split('T')[0]`
-  - [ ] `sitemapDateTimeString(date)`
-- [ ] Create `src/utils/readTime.ts` (word count / 240)
-- [ ] Create `src/utils/tags.ts` (get unique tags, filter nav/meta tags)
-- [ ] Create `src/utils/text.ts` (`firstWordsFrom`, `encodeURIComponent` wrapper)
-- [ ] Drop `addHash` filter — delete from `.eleventy.js` / Vite handles content hashing
-- [ ] Remove `luxon` from `package.json` (replaced by `Intl.DateTimeFormat`)
-- [ ] Implement `lastModifiedDate` using `child_process.execSync` in build scripts
-- [ ] **Commit phase 8**
+- [x] Create `src/utils/dates.ts`
+  - [x] `readableDate(date)` using `Intl.DateTimeFormat`
+  - [x] `htmlDateString(date)` → `date.toISOString().split('T')[0]`
+  - [x] `sitemapDateTimeString(date)`
+- [x] Create `src/utils/readTime.ts` (word count / 240)
+- [x] Create `src/utils/tags.ts` (get unique tags)
+- [x] Create `src/utils/text.ts` (`firstWordsFrom`)
+- [x] Drop `addHash` filter — N/A, Vite handles content hashing
+- [x] Remove `luxon` from `package.json` (replaced by `Intl.DateTimeFormat`)
+- [ ] Implement `lastModifiedDate` using `child_process.execSync` in build scripts (deferred to Phase 12 when sitemap lastmod is wired)
+- [x] **Commit phase 8**
 
 ## Phase 9: Client-Side JavaScript `[Checkpoint D]`
 
