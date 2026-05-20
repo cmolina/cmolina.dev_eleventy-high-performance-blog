@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   lang?: string;
   pageUrl?: string;
+  ogImage?: string;
 }
 
 const SITE_URL = 'https://cmolina.dev';
@@ -19,11 +20,12 @@ const {
   description,
   lang = 'en',
   pageUrl = Astro.url.pathname,
+  ogImage: ogImageProp,
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 const canonicalUrl = `${SITE_URL}${pageUrl}`;
-const ogImage = `${SITE_URL}/img/social${pageUrl}og-image.png`;
+const ogImage = ogImageProp ?? `${SITE_URL}/img/social${pageUrl}og-image.png`;
 const isDev = import.meta.env.DEV;
 ---
 

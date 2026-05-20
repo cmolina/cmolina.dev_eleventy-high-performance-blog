@@ -25,6 +25,7 @@ const readMinutes = readTime(body);
 
 const pageUrl = `/blog/${slug}`;
 const shareUrl = `${SITE_URL}${pageUrl}`;
+const ogImage = `${SITE_URL}/og/${slug}.png`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -48,7 +49,7 @@ const jsonLd = {
 };
 ---
 
-<Base title={title} description={description} pageUrl={pageUrl}>
+<Base title={title} description={description} pageUrl={pageUrl} ogImage={ogImage}>
   <Fragment slot="header">
     <h1>{title}</h1>
     <aside>{readMinutes} min read.</aside>

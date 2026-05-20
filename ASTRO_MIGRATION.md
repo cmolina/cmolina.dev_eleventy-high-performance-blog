@@ -71,7 +71,7 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 - [x] Implement prev/next post logic using sorted collection index
 - [x] Create `src/pages/[slug].astro` for static pages collection (`/services`, `/me`, `/values`)
 - [ ] Verify all legacy URL paths still resolve (check Firebase redirects)
-- [ ] Delete `og-image.njk` (replaced in Phase 11)
+- [x] Delete `og-image.njk` (replaced in Phase 11)
 - [x] **Commit phase 4**
 
 ## Phase 5: CSS & Styling `[Checkpoint D]`
@@ -152,12 +152,14 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 11: OG Images `[Checkpoint D]`
 
-- [ ] Install `satori` + `sharp`
-- [ ] Create `src/pages/og/[slug].png.ts` endpoint
-- [ ] Design OG image template component (replaces `og-image.njk`) — delete `og-image.njk` after porting
-- [ ] Wire OG image URLs into `Post.astro` meta tags
+- [x] Install `satori` + `sharp`
+- [x] Create `src/pages/og/[...slug].png.ts` endpoint (1200×630 PNG, static pre-rendered)
+- [x] Design OG image template (title, description, author avatar, site name) — delete `og-image.njk` after porting
+- [x] Wire OG image URLs into `Post.astro` meta tags via `ogImage` prop on `Base.astro`
+- [x] Add `ogImage?: string` prop to `Base.astro` (falls back to legacy path for non-post pages)
+- [x] Store Merriweather woff fonts in `src/assets/` (satori requires woff/ttf, not woff2)
 - [ ] Validate OG images with social debuggers (Twitter, Facebook, LinkedIn)
-- [ ] **Commit phase 11**
+- [x] **Commit phase 11**
 
 ## Phase 12: SEO & Structured Data `[Checkpoint D]`
 

@@ -35,6 +35,8 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@sindresorhus/slugify": "^1.1.2",
+    "@types/node": "^25.9.1",
+    "@types/sharp": "^0.31.1",
     "astro": "^6.1.7",
     "capture-website": "^2.1.1",
     "eleventy-plugin-local-images": "^0.4.0",
@@ -69,7 +71,9 @@
     "phin": "^3.5.0",
     "purge-from-html": "^1.0.3",
     "querystring": "^0.2.0",
+    "satori": "^0.26.0",
     "sharp": "^0.29.3",
-    "twitter": "^1.7.1"
+    "twitter": "^1.7.1",
+    "wawoff2": "^2.0.1"
   }
 }
