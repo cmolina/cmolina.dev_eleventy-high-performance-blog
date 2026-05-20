@@ -15,7 +15,7 @@ What I will do is to explain how I stopped using Hey, and what is my new email c
 I chose [Protonmail](https://protonmail.com/) as my new email provider, together with a custom domain, a single rule filter for replicating the screening, 3 custom folders, and the built-in contacts and mark as spam features.
 
 The new Inbox looks like this:
-![A screenshot of the Protonmail web client](/img/2021/05/protonmail-screenshot.png)
+![A screenshot of the Protonmail web client](./protonmail-screenshot.png)
 
 Did you notice the "Paper trail", "Screening" and "The Feed" folders?
 

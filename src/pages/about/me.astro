@@ -1,5 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
+import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
+import elephantImg from '../../assets/img/about/me/elephant.jpg';
+import llamaImg from '../../assets/img/about/me/llama.jpg';
+import rubberDuckImg from '../../assets/img/about/me/rubber-duck.jpg';
 ---
 
 <Base title="About Me">
@@ -30,10 +35,10 @@ import Base from '../../layouts/Base.astro';
   <h2>Whittling</h2>
   <p>During 2020 I had a sudden realization: I have no idea on <em>how to work with wood</em>. I went to a used book store and bought two books, about carving and whittling, and started my first basswood projects. Here are pictures of my creations, in reverse chronological order:</p>
 
-  <img src="/img/about/me/salamander-frozen-2.jpg" alt="The salamander from Frozen 2" width="500" height="571" />
-  <img src="/img/about/me/elephant.jpg" alt="A sit elephant" width="500" height="513" />
-  <img src="/img/about/me/llama.jpg" alt="A stylized llama" width="500" height="520" />
-  <img src="/img/about/me/rubber-duck.jpg" alt='A "rubber duck" made of wood' width="500" height="362" />
+  <Image src={salamanderImg} alt="The salamander from Frozen 2" width="500" height="571" />
+  <Image src={elephantImg} alt="A sit elephant" width="500" height="513" />
+  <Image src={llamaImg} alt="A stylized llama" width="500" height="520" />
+  <Image src={rubberDuckImg} alt='A "rubber duck" made of wood' width="500" height="362" />
 
   <h2>Being physically active</h2>
   <p>I aim to walk a few thousand steps each day, pay a visit to the gym, and try new sports; although I usually suck at them. Lately I've done table tennis, golf (mostly shooting range) and pickleball.</p>

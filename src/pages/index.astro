@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Home from '../layouts/Home.astro';
+import carlosImg from '../assets/img/about/me/carlos.jpg';
 ---
 
 <Home
@@ -24,6 +26,6 @@ import Home from '../layouts/Home.astro';
         </a>
       </div>
     </div>
-    <img src="/img/about/me/carlos.jpg" class="profile-picture" alt="A picture of the author, Carlos Molina, resting in a couch" width="200" height="200" fetchpriority="high" />
+    <Image src={carlosImg} class="profile-picture" alt="A picture of the author, Carlos Molina, resting in a couch" width="200" height="200" fetchpriority="high" />
   </div>
 </Home>

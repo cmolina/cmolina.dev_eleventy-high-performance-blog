@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import { readableDate, htmlDateString } from '../utils/dates';
 import { readTime } from '../utils/readTime';
+import favicon192 from '../assets/img/favicon/favicon-192x192.png';
 
 interface Props {
   title: string;
@@ -39,7 +40,7 @@ const jsonLd = {
     name: PUBLISHER_NAME,
     logo: {
       '@type': 'ImageObject',
-      url: `${SITE_URL}/img/favicon/favicon-192x192.png`,
+      url: `${SITE_URL}${favicon192.src}`,
     },
   },
   url: shareUrl,

@@ -15,7 +15,7 @@ Currently, I am using a MacBook Air 2020 (M1 chip); however, most of these progr
 
 
 ## Terminal emulator: iTerm2
-![](/img/2021/11/iTerm2-screenshot.png)
+![](./iTerm2-screenshot.png)
 
 I love its minimal UI, but at the same time it has lots of features and is very customizable. Particularly, I like to 
 - split the screen (<kbd>Cmd</kbd> + <kbd>D</kbd>), 
@@ -26,7 +26,7 @@ Get it from https://iterm2.com/.
 
 
 ## Package manager: Homebrew
-![](/img/2021/11/brew-screenshot.png)
+![](./brew-screenshot.png)
 
 Package managers are so handy for code development. While I enjoyed them while using Linux, for some reason Mac and Windows don't come with one by default. And Homebrew is not perfect —it breaks from time to time, but it has a big community, and you can probably find a fix for your problem in Stack Overflow.
 
@@ -52,7 +52,7 @@ Some tools within a UNIX-like system are _ancient_, and for compatibility or cod
 
 
 ### bat: a `cat` alternative
-![](/img/2021/11/bat-screenshot.png)
+![](./bat-screenshot.png)
 
 What if you could read files with syntax highlight directly from your terminal? I've always used `cat` to read files, however it is hard to read code with no colors and no scroll. (Maybe `vim` users can already do this, but I still have no idea how to exit that program 🥲).
 
@@ -68,7 +68,7 @@ Get it from Homebrew, and read the docs at https://github.com/sharkdp/bat.
 
 
 ### exa: a `ls` alternative
-![](/img/2021/11/exa-screenshot.png)
+![](./exa-screenshot.png)
 
 `exa` is way easier to read for me than `ls`. Period. I also added an alias to replace `ls`.
 

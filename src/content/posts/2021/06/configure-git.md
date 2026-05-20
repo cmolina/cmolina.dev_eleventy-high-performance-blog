@@ -50,7 +50,7 @@ git config --global sequence.editor "code --wait"
 
 which will open a convenient rebase interactive tab when needed, like the one of the next screenshot:
 
-![Screenshot of GitLen's interactive rebase editor](/img/2021/06/interactive-rebase-editor.png)
+![Screenshot of GitLen's interactive rebase editor](./interactive-rebase-editor.png)
 
 ## Change your default branch name
 The current version of git shows a warning when initializing a new repository with `git init`, as they are moving away from `master`. Since I prefer to use `main`, I made the message disappear by running the following command:

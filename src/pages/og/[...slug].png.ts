@@ -21,7 +21,7 @@ export const GET: APIRoute = async ({ props }) => {
 
   const fontRegular = readFileSync(resolve('./src/assets/Merriweather-Regular.woff'));
   const fontBold = readFileSync(resolve('./src/assets/Merriweather-Bold.woff'));
-  const authorImg = readFileSync(resolve('./public/img/about/me/carlos.jpg'));
+  const authorImg = readFileSync(resolve('./src/assets/img/about/me/carlos.jpg'));
   const authorImgSrc = `data:image/jpeg;base64,${authorImg.toString('base64')}`;
 
   const topSection: object[] = [

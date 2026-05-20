@@ -32,7 +32,7 @@ Let’s break down the process and get you rocking.
 
 6. **Next AC, Please:** Once you’re done, grab the next AC from the story and start over. It is time for a new hit
 
-<img src="/img/2024/05/acdc-diagram.svg" width="520" height="426" alt="Diagram showing the AC/DC workflow: iterate through acceptance criteria, implement, run tests, repeat" />
+<img src="./acdc-diagram.svg" width="520" height="426" alt="Diagram showing the AC/DC workflow: iterate through acceptance criteria, implement, run tests, repeat" />
 
 ## Why Use AC/DC?
 Following AC/DC ensures you address all the ACs from a story. If they ever break, you’ll be notified immediately – no more surprise bugs halfway through your concert. This technique has allowed me to move fast in projects while maintaining high code quality.
