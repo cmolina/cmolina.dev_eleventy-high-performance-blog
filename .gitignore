@@ -9,3 +9,7 @@ export
 .firebase/
 firebase-debug.log
 .direnv/
+dist/
+.astro/
+test-results/
+playwright-report/

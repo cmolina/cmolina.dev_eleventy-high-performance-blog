@@ -1,0 +1,58 @@
+---
+export const meta = { title: 'About Me' };
+
+import Image from '../../components/Image.astro';
+import Base from '../../layouts/Base.astro';
+import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
+import elephantImg from '../../assets/img/about/me/elephant.jpg';
+import llamaImg from '../../assets/img/about/me/llama.jpg';
+import rubberDuckImg from '../../assets/img/about/me/rubber-duck.jpg';
+---
+
+<Base title="About Me">
+  <h1>About Me</h1>
+  <p><em>¡Hola!</em> Welcome to my blog. This is a space where I write about the things I learn when doing software. Currently, I work as an independent software engineer. I like to write code that is simple to read and understand, although I like to delete code even more.</p>
+
+  <p>However, there are other things that I like besides computers, and I wanted to expand a little in the next sections.</p>
+
+  <p>In my spare time I enjoy spending time with my spouse Dani, my cat Punto, and with friends and family. I am also practicing some hobbies, here are the most recent.</p>
+
+  <h2>Audiobooks</h2>
+  <p>I love to listening to audiobooks, in particular those about self-help. My favorites ones are:</p>
+  <ul>
+    <li><a href="https://www.audible.com/pd/B07JH58GK5">The Richest Man in Babylon</a> from George S. Clason,</li>
+    <li><a href="https://www.audible.com/pd/B07JH58GK5">Twelve Pillars</a> from Jim Rohn, and</li>
+    <li><a href="https://www.audible.com/pd/B002V5BV96">How to Win Friends &amp; Influence People</a> from Dale Carnegie.</li>
+  </ul>
+
+  <p>I've listened to them several times in Spanish, and then a few more times in English. Why would I listen to them so many times? It seems to me like every time I hear them I am a different person, so I end up giving a new meaning to the same words, ending up learning something new.</p>
+
+  <p>I have books from other categories that I've enjoyed as well:</p>
+  <ul>
+    <li>in economics <a href="https://www.audible.com/pd/B00VQTE4OC">Misbehaving</a> from L.J. Garsen. It is nice to hear how economists developed new theories to accommodate human behavior different from the predicted by the literature;</li>
+    <li>the biography of <a href="https://www.audible.com/pd/B005V0QI82">Steve Jobs</a> from Walter Isaacson. Jobs was brilliant, but also a jerk. I think there are lots of things I can learn from his life, on what to do and what to avoid;</li>
+    <li>the biography of Mike Massimino in <a href="https://www.audible.com/pd/B01LZJWYUP">Spaceman</a>. Have you ever wondered what it takes to be an astronaut? This is the story of a kid with a dream, and everything he had to go thorough to reach it.</li>
+  </ul>
+
+  <h2>Whittling</h2>
+  <p>During 2020 I had a sudden realization: I have no idea on <em>how to work with wood</em>. I went to a used book store and bought two books, about carving and whittling, and started my first basswood projects. Here are pictures of my creations, in reverse chronological order:</p>
+
+  <Image src={salamanderImg} alt="The salamander from Frozen 2" width="500" height="571" />
+  <Image src={elephantImg} alt="A sit elephant" width="500" height="513" />
+  <Image src={llamaImg} alt="A stylized llama" width="500" height="520" />
+  <Image src={rubberDuckImg} alt='A "rubber duck" made of wood' width="500" height="362" />
+
+  <h2>Being physically active</h2>
+  <p>I aim to walk a few thousand steps each day, pay a visit to the gym, and try new sports; although I usually suck at them. Lately I've done table tennis, golf (mostly shooting range) and pickleball.</p>
+
+  <h2>Contact Me</h2>
+  <p>If you want to get in touch please email me at <code>hi@cmolina.dev</code>. I will try to do my best at getting back to you as soon as I can.</p>
+
+  <p>Do we already know each other? Consider</p>
+  <ul>
+    <li>adding me to your <em>LinkedIn</em> network at <a href="https://www.linkedin.com/in/carlos-molina-avenda%C3%B1o/">Carlos Molina Avendaño</a></li>
+    <li>following me on <em>Mastodon</em> at <a href="https://elk.zone/techhub.social/@cmolina">@cmolina/@techhub.social</a>. Beware, I <em>like</em> and <em>retweet</em> on lots of subjects besides programming.</li>
+  </ul>
+
+  <p><em>¡Chao!</em></p>
+</Base>

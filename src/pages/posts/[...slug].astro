@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from 'astro:content';
+import { isPublished, sortByDate } from '../../utils/posts';
+import Post from '../../layouts/Post.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+  const posts = sortByDate(allPosts.filter(isPublished));
+
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      prevPost: index < posts.length - 1
+        ? { url: `/posts/${posts[index + 1].id}/`, title: posts[index + 1].data.title }
+        : undefined,
+      nextPost: index > 0
+        ? { url: `/posts/${posts[index - 1].id}/`, title: posts[index - 1].data.title }
+        : undefined,
+    },
+  }));
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Post
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
+  update={post.data.update}
+  slug={post.id}
+  body={post.body ?? ''}
+  prevPost={prevPost}
+  nextPost={nextPost}
+>
+  <Content />
+</Post>

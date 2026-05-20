@@ -1,0 +1,9 @@
+---
+import { Image, type LocalImageProps, type RemoteImageProps } from 'astro:assets';
+
+type Props = LocalImageProps | RemoteImageProps;
+
+const { densities = [1, 2], quality = 85, ...rest } = Astro.props as Props;
+---
+
+<Image densities={densities} quality={quality} {...rest} />

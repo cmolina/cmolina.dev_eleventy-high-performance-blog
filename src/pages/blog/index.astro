@@ -1,0 +1,27 @@
+---
+export const meta = {
+  title: 'Blog',
+  description: 'I love working on software as a developer, technical coach, as well as eating veggie food, reading/listening to audiobooks, walk in nature and playing with cats.',
+};
+
+import { getCollection } from 'astro:content';
+import { isPublished, sortByDate } from '../../utils/posts';
+import Home from '../../layouts/Home.astro';
+import PostsList from '../../components/PostsList.astro';
+
+const allPosts = await getCollection('posts');
+const posts = sortByDate(allPosts.filter(isPublished));
+---
+
+<Home title="Blog" description="I love working on software as a developer, technical coach, as well as eating veggie food, reading/listening to audiobooks, walk in nature and playing with cats.">
+  <h1>Blog</h1>
+  <p>
+    I love working on software as a developer, technical coach, as well as eating veggie food,
+    reading/listening to audiobooks, walk in nature and playing with cats.
+  </p>
+  <hr />
+  <div id="posts">
+    <p>Here there is a list with my latest posts:</p>
+    <PostsList posts={posts} />
+  </div>
+</Home>

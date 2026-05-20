@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import { isPublished } from '../../utils/posts';
+import { getUniqueTags } from '../../utils/tags';
+import Home from '../../layouts/Home.astro';
+
+const allPosts = await getCollection('posts');
+const published = allPosts.filter(isPublished);
+
+const tags = getUniqueTags(published);
+---
+
+<Home title="Tags">
+  <h1>Tags</h1>
+  {tags.map((tag) => (
+    <a href={`/tags/${tag}/`} class="post-tag">{tag}</a>
+  ))}
+</Home>
