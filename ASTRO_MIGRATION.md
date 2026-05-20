@@ -171,6 +171,17 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## ~~Phase 13: Analytics~~ — dropped, GA unused
 
+## Phase 13: Convert Static Pages to HTML
+
+Replace the `pages` content collection (markdown-based) with plain `.astro` pages that write HTML directly. Motivation: `me`, `services`, and `values` are hand-crafted pages, not prose content — no benefit from markdown parsing or collection schema.
+
+- [x] Create `src/pages/me.astro`, `src/pages/services.astro`, `src/pages/values.astro` — port content from `src/content/pages/*.md` as HTML inside the Base layout
+- [x] Delete `src/content/pages/` directory
+- [x] Delete `src/pages/[slug].astro` (no longer needed)
+- [x] Remove `pages` collection from `src/content.config.ts`
+- [x] Verify `/me`, `/services`, `/values` routes still resolve
+- [x] **Commit phase 13**
+
 ## Phase 14: Final Eleventy Removal
 
 - [ ] Remove remaining Eleventy dependencies from `package.json`:
