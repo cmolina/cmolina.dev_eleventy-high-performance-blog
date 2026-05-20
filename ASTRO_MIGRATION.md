@@ -122,18 +122,18 @@ Work incrementally in this repo (Eleventy and Astro coexist — Astro ignores `.
 
 ## Phase 9: Client-Side JavaScript `[Checkpoint D]`
 
-- [ ] Move `src/main.js` → `src/scripts/main.ts` — delete `src/main.js` after porting
-- [ ] Import via `<script>` in `Base.astro` (Vite bundles and hashes)
-- [ ] Port URL param stripping
-- [ ] Port share button logic
-- [ ] Port link prefetching (or use `@astrojs/prefetch` integration)
-- [ ] Port scroll progress bar
-- [ ] Port image placeholder fade-out
-- [ ] Port GA tracking and event handlers
-- [ ] Move `js/web-vitals.js` → `src/scripts/web-vitals.ts` — delete `js/web-vitals.js` after porting
-- [ ] Delete `js/` if empty
-- [ ] Remove `rollup` + `rollup-plugin-terser` from `package.json` (replaced by Vite)
-- [ ] **Commit phase 9**
+- [x] Move `src/main.js` → `src/scripts/main.ts` — delete `src/main.js` after porting
+- [x] Import via `<script>` in `Base.astro` (Vite bundles and hashes)
+- [x] Port URL param stripping
+- [x] Port share button logic (in Post.astro)
+- [x] Port link prefetching (mouseover + touchstart `<link rel=prefetch>`)
+- [x] Port scroll progress bar
+- [x] Port image placeholder fade-out
+- [x] ~~Port GA tracking and event handlers~~ — dropped, GA unused
+- [x] ~~Move `js/web-vitals.js` → `src/scripts/web-vitals.ts`~~ — `js/` already gone; web-vitals N/A without GA
+- [x] Delete `js/` if empty — already done
+- [x] Remove `rollup` + `rollup-plugin-terser` from `package.json` — already removed
+- [x] **Commit phase 9**
 
 ## Phase 10: Security & Headers `[Checkpoint D]`
 
@@ -184,22 +184,16 @@ Replace the `pages` content collection (markdown-based) with plain `.astro` page
 
 ## Phase 14: Final Eleventy Removal
 
-- [ ] Remove remaining Eleventy dependencies from `package.json`:
-  - [ ] `@11ty/eleventy`
-  - [ ] `@11ty/eleventy-plugin-syntaxhighlight`
-  - [ ] `@11ty/eleventy-navigation`
-  - [ ] `eleventy-plugin-local-images`
-  - [ ] `html-minifier`
-  - [ ] `capture-website`
-  - [ ] `nunjucks`
-  - [ ] `@ampproject/toolbox-optimizer`
-- [ ] Delete `.eleventy.js`
-- [ ] Delete `_includes/` if empty
-- [ ] Delete `_data/` if empty
-- [ ] Delete `_11ty/` if empty
-- [ ] Remove Eleventy-specific scripts from `package.json`
-- [ ] Run `npm install` and verify clean lockfile
-- [ ] **Commit phase 14**
+- [x] Remove remaining Eleventy dependencies from `package.json` (+ all other non-Astro deps)
+- [x] Replace Eleventy scripts with `astro dev` / `astro build` / `astro preview`
+- [x] Delete `.eleventy.js`
+- [x] Delete `_includes/` — already empty from phase 3
+- [x] Delete `_data/` (metadata.json, isdevelopment.js, baseHref.js)
+- [x] Delete `_11ty/` (all ported or N/A scripts)
+- [x] Delete `test/` (Eleventy-specific mocha tests, already broken)
+- [x] Fix `astro.config.mjs` sitemap mapping for /me, /services, /values (point to .astro pages, not deleted .md)
+- [x] Run `npm install` — 659 packages removed, lockfile clean
+- [x] **Commit phase 14**
 
 ## Phase 15: Testing & QA
 

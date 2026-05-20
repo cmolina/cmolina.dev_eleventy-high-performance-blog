@@ -25,9 +25,9 @@ function urlToFilePath(url) {
     '/': 'src/pages/index.astro',
     '/blog': 'src/pages/blog/index.astro',
     '/tags': 'src/pages/tags/index.astro',
-    '/me': 'src/content/pages/me.md',
-    '/services': 'src/content/pages/services.md',
-    '/values': 'src/content/pages/values.md',
+    '/me': 'src/pages/me.astro',
+    '/services': 'src/pages/services.astro',
+    '/values': 'src/pages/values.astro',
   };
   return map[path] ?? null;
 }
