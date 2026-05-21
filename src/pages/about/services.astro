@@ -1,24 +1,271 @@
 ---
-export const meta = { title: 'Servicios' };
+export const meta = { title: 'Services' };
 
 import Base from '../../layouts/Base.astro';
 ---
 
-<Base title="Servicios">
-  <h1>Servicios</h1>
-  <p>Trabajo con directivos, gerencias, equipos de desarrollo y organizaciones para mejorar la entrega de productos y servicios de software, asegurando una entrega oportuna con un enfoque en la calidad, accesibilidad y mantenibilidad.</p>
+<Base title="Services" description="I help technology organisations build resilient software systems and high-performing engineering cultures through strategic consultancy and hands-on expertise.">
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span aria-hidden="true">/</span>
+    <span class="current" aria-current="page">Services</span>
+  </nav>
 
-  <p>Mis servicios de consultoría incluyen:</p>
-  <ul>
-    <li><strong>Optimización de la Entrega de Software</strong>: Ayudando a las organizaciones a optimizar sus procesos de desarrollo de software para entregar mejor software, más rápido.</li>
-    <li><strong>Coaching en Liderazgo Técnico</strong>: Guiando a ejecutivos y líderes técnicos para construir y liderar equipos efectivos y de alto rendimiento.</li>
-    <li><strong>Pruebas de Código</strong>: Implementación de desarrollo basado en pruebas, pruebas automatizadas y refactorización de código legado para mejorar la fiabilidad y mantenibilidad.</li>
-    <li><strong>Aplicaciones JavaScript y TypeScript</strong>: Experto en NodeJS, React, Angular y vanilla JS.</li>
-    <li><strong>Accesibilidad</strong>: Ofreciendo charlas, talleres y pruebas tanto manuales como automatizadas para asegurar que tu software sea accesible para todos los usuarios.</li>
-    <li><strong>Prototipos con Código</strong>: Desarrollo rápido de prototipos para validar ideas y acelerar el desarrollo de productos.</li>
-  </ul>
+  <!-- Hero -->
+  <header class="page-header">
+    <h1 class="headline-xl">Engineering precision for high-impact teams.</h1>
+    <p class="body-lg muted">
+      I help technology organisations build resilient software systems and high-performing
+      engineering cultures through strategic consultancy and hands-on expertise.
+    </p>
+  </header>
 
-  <p>Hablo inglés y español, y estoy disponible para servicios de consultoría dentro del huso horario UTC -3 o UTC -4, dependiendo de la época del año. <a href="https://www.timeanddate.com/worldclock/chile/temuco">Consulta mi huso horario actual aquí</a>.</p>
+  <!-- Services list -->
+  <section class="services">
+    <!-- Software Delivery Optimisation -->
+    <div class="service-card">
+      <div class="service-card__content">
+        <div class="service-card__text">
+          <span class="label-sm accent">Consultancy</span>
+          <h2 class="headline-lg">Software Delivery Optimisation</h2>
+          <p class="body-md muted">
+            Eliminate bottlenecks in your development lifecycle. I analyse your CI/CD pipelines,
+            branching strategies, and deployment frequencies to move from quarterly releases to
+            daily deployments without compromising stability.
+          </p>
+        </div>
+      </div>
+      <div class="service-card__underline"></div>
+    </div>
 
-  <p>Si estás interesado en mis servicios de consultoría, por favor envíame un correo electrónico a <code>hola@cmolina.dev</code> para que coordinemos una sesión inicial.</p>
+    <!-- Technical Leadership Coaching -->
+    <div class="service-card">
+      <div class="service-card__content">
+        <div class="service-card__text">
+          <span class="label-sm accent">Mentorship</span>
+          <h2 class="headline-lg">Technical Leadership Coaching</h2>
+          <p class="body-md muted">
+            Bridging the gap between engineering and business. I coach new Tech Leads and EMs on
+            strategic decision-making, effective communication, and building psychological safety
+            within technical teams.
+          </p>
+        </div>
+      </div>
+      <div class="service-card__underline"></div>
+    </div>
+
+    <!-- 2-column grid -->
+    <div class="services-mini-grid">
+      <div class="service-card">
+        <span class="label-sm accent">Engineering</span>
+        <h3 class="headline-md">Code Testing</h3>
+        <p class="body-md muted">
+          Infrastructure for reliability. Comprehensive strategies for unit, integration, and E2E
+          testing that provide confidence rather than friction.
+        </p>
+        <div class="service-card__underline"></div>
+      </div>
+      <div class="service-card">
+        <span class="label-sm accent">Development</span>
+        <h3 class="headline-md">JS/TS Applications</h3>
+        <p class="body-md muted">
+          Building scalable frontends and Node services with TypeScript. High-performance, type-safe
+          architectures designed for longevity.
+        </p>
+        <div class="service-card__underline"></div>
+      </div>
+      <div class="service-card">
+        <span class="label-sm accent">Ethical UI</span>
+        <h3 class="headline-md">Accessibility</h3>
+        <p class="body-md muted">
+          Inclusive digital products. WCAG compliance audits and implementation strategies to ensure
+          your software is usable by everyone.
+        </p>
+        <div class="service-card__underline"></div>
+      </div>
+      <div class="service-card">
+        <span class="label-sm accent">Innovation</span>
+        <h3 class="headline-md">Prototyping</h3>
+        <p class="body-md muted">
+          Moving from idea to proof-of-concept in days. High-fidelity functional prototypes to
+          validate technical feasibility and user value.
+        </p>
+        <div class="service-card__underline"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2 class="headline-lg">Ready to optimise your delivery?</h2>
+    <p class="body-lg muted">
+      Whether you need a full audit or targeted technical leadership, let's discuss how I can help
+      your team reach its full potential.
+    </p>
+    <a href="mailto:hola@cmolina.dev" class="btn-primary">Let's Talk</a>
+  </section>
 </Base>
+
+<style>
+  /* ---- Breadcrumbs ---- */
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    justify-content: flex-start;
+    padding: 0;
+    list-style: none;
+    flex-wrap: nowrap;
+  }
+
+  .breadcrumbs a { color: var(--on-surface-variant, #444748); text-decoration: none; }
+  .breadcrumbs a:hover { color: var(--color); }
+  .breadcrumbs span { color: var(--on-surface-variant, #444748); }
+  .breadcrumbs .current { color: var(--color); }
+
+  /* ---- Typography ---- */
+  .page-header {
+    margin-bottom: 4rem;
+  }
+
+  .headline-xl {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color);
+    margin: 0 0 1.5rem;
+  }
+
+  .headline-lg {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--color);
+    margin: 0 0 1rem;
+  }
+
+  .headline-md {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color);
+    margin: 0 0 0.75rem;
+  }
+
+  .body-lg { font-size: 1.25rem; line-height: 1.6; margin: 0 0 1rem; }
+  .body-md { font-size: 1.125rem; line-height: 1.6; margin: 0; }
+  .muted { color: var(--on-surface-variant, #444748); }
+
+  .label-sm {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .accent { color: var(--secondary, #5c3cdc); }
+
+  /* ---- Services ---- */
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .service-card {
+    border-top: 2px solid var(--secondary, #5c3cdc);
+    padding-top: 1.5rem;
+    position: relative;
+  }
+
+  .service-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .service-card__text .headline-lg,
+  .service-card__text .headline-md {
+    margin-top: 0.25rem;
+  }
+
+  .service-card__underline {
+    height: 2px;
+    background-color: var(--secondary, #5c3cdc);
+    width: 0;
+    margin-top: 1.5rem;
+    transition: width 0.3s ease;
+  }
+
+  .service-card:hover .service-card__underline {
+    width: 100%;
+  }
+
+  /* ---- Mini grid ---- */
+  .services-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .services-mini-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .services-mini-grid .service-card {
+    /* already styled above */
+  }
+
+  /* ---- CTA ---- */
+  .cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--outline-variant, #c4c7c7);
+    border-bottom: 1px solid var(--outline-variant, #c4c7c7);
+    background-color: var(--surface-container-low, #f5f3f3);
+    margin-bottom: 2rem;
+  }
+
+  .cta .headline-lg { margin-bottom: 1rem; }
+  .cta .body-lg { max-width: 40rem; margin: 0 auto 2rem; }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--secondary, #5c3cdc);
+    border: 2px solid var(--secondary, #5c3cdc);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--secondary, #5c3cdc);
+  }
+
+  h1, h2, h3 { margin-top: 0; }
+</style>
