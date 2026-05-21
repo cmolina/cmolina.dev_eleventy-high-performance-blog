@@ -5,7 +5,3 @@ export function readableDate(date: Date): string {
 export function htmlDateString(date: Date): string {
   return date.toISOString().split('T')[0];
 }
-
-export function sitemapDateTimeString(date: Date): string {
-  return date.toISOString();
-}

@@ -3,56 +3,335 @@ export const meta = { title: 'About Me' };
 
 import Image from '../../components/Image.astro';
 import Base from '../../layouts/Base.astro';
-import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
+import carlosImg from '../../assets/img/about/me/carlos.jpg';
 import elephantImg from '../../assets/img/about/me/elephant.jpg';
 import llamaImg from '../../assets/img/about/me/llama.jpg';
 import rubberDuckImg from '../../assets/img/about/me/rubber-duck.jpg';
+import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
 ---
 
 <Base title="About Me">
-  <h1>About Me</h1>
-  <p><em>¡Hola!</em> Welcome to my blog. This is a space where I write about the things I learn when doing software. Currently, I work as an independent software engineer. I like to write code that is simple to read and understand, although I like to delete code even more.</p>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span aria-hidden="true">/</span>
+    <span class="current" aria-current="page">About</span>
+  </nav>
 
-  <p>However, there are other things that I like besides computers, and I wanted to expand a little in the next sections.</p>
+  <!-- Hero Header -->
+  <header class="page-header">
+    <h1 class="headline-xl">¡Hola! I'm Carlos.</h1>
+    <p class="body-lg muted italic">
+      I like to write code that is simple to read and understand — although I like to delete code
+      even more.
+    </p>
+  </header>
 
-  <p>In my spare time I enjoy spending time with my spouse Dani, my cat Punto, and with friends and family. I am also practicing some hobbies, here are the most recent.</p>
+  <!-- Bento intro -->
+  <section class="bento">
+    <div class="bento__photo">
+      <Image
+        src={carlosImg}
+        alt="Portrait of Carlos Molina"
+        width="400"
+        height="400"
+        class="bento-img"
+      />
+    </div>
+    <div class="bento__card">
+      <h2 class="headline-md">How I think about software</h2>
+      <p class="body-md">
+        I like to write code that is simple to read and understand. Whatever I build, I try to
+        keep it simple enough that someone else — or future me — can still make sense of it.
+      </p>
+      <div class="bento__tags">
+        <span class="tag tag--accent">Architecture</span>
+        <span class="tag tag--accent">Sustainability</span>
+        <span class="tag">Precision</span>
+      </div>
+    </div>
+  </section>
 
-  <h2>Audiobooks</h2>
-  <p>I love to listening to audiobooks, in particular those about self-help. My favorites ones are:</p>
-  <ul>
-    <li><a href="https://www.audible.com/pd/B07JH58GK5">The Richest Man in Babylon</a> from George S. Clason,</li>
-    <li><a href="https://www.audible.com/pd/B07JH58GK5">Twelve Pillars</a> from Jim Rohn, and</li>
-    <li><a href="https://www.audible.com/pd/B002V5BV96">How to Win Friends &amp; Influence People</a> from Dale Carnegie.</li>
-  </ul>
+  <!-- Beyond the Screen -->
+  <section class="hobbies">
+    <div class="hobbies__meta">
+      <span class="label-sm accent">Beyond the Screen</span>
+    </div>
+    <h2 class="headline-lg">A Life in Chapters</h2>
+    <p class="body-md muted">
+      When I'm not architecting systems, I'm usually immersed in a world of narrative. Audiobooks
+      are my sanctuary — a way to explore complex ideas while remaining physically present in the
+      world. From non-fiction deep dives to speculative fiction, the structure of a good story
+      often informs the structure of my code.
+    </p>
+    <p class="body-md muted">
+      My favourite audiobooks include <em>The Richest Man in Babylon</em> by George S. Clason,
+      <em>Twelve Pillars</em> by Jim Rohn, and <em>How to Win Friends &amp; Influence People</em>
+      by Dale Carnegie. I've also enjoyed <em>Misbehaving</em>, the Steve Jobs biography, and
+      <em>Spaceman</em> by Mike Massimino.
+    </p>
+    <p class="body-md muted">
+      Outside of reading, I practice whittling, do CrossFit, and go trekking in the Araucanía.
+      At home I'm kept company by my dog Capuchino and my cat Punto.
+    </p>
 
-  <p>I've listened to them several times in Spanish, and then a few more times in English. Why would I listen to them so many times? It seems to me like every time I hear them I am a different person, so I end up giving a new meaning to the same words, ending up learning something new.</p>
+    <div class="whittling-grid">
+      <figure class="whittling-item">
+        <Image src={elephantImg} alt="Whittled elephant" width="200" height="200" class="whittling-img" />
+      </figure>
+      <figure class="whittling-item">
+        <Image src={llamaImg} alt="Whittled llama" width="200" height="200" class="whittling-img" />
+      </figure>
+      <figure class="whittling-item">
+        <Image src={rubberDuckImg} alt="Whittled rubber duck" width="200" height="200" class="whittling-img" />
+      </figure>
+      <figure class="whittling-item">
+        <Image src={salamanderImg} alt="Whittled salamander" width="200" height="200" class="whittling-img" />
+      </figure>
+    </div>
+  </section>
 
-  <p>I have books from other categories that I've enjoyed as well:</p>
-  <ul>
-    <li>in economics <a href="https://www.audible.com/pd/B00VQTE4OC">Misbehaving</a> from L.J. Garsen. It is nice to hear how economists developed new theories to accommodate human behavior different from the predicted by the literature;</li>
-    <li>the biography of <a href="https://www.audible.com/pd/B005V0QI82">Steve Jobs</a> from Walter Isaacson. Jobs was brilliant, but also a jerk. I think there are lots of things I can learn from his life, on what to do and what to avoid;</li>
-    <li>the biography of Mike Massimino in <a href="https://www.audible.com/pd/B01LZJWYUP">Spaceman</a>. Have you ever wondered what it takes to be an astronaut? This is the story of a kid with a dream, and everything he had to go thorough to reach it.</li>
-  </ul>
-
-  <h2>Whittling</h2>
-  <p>During 2020 I had a sudden realization: I have no idea on <em>how to work with wood</em>. I went to a used book store and bought two books, about carving and whittling, and started my first basswood projects. Here are pictures of my creations, in reverse chronological order:</p>
-
-  <Image src={salamanderImg} alt="The salamander from Frozen 2" width="500" height="571" />
-  <Image src={elephantImg} alt="A sit elephant" width="500" height="513" />
-  <Image src={llamaImg} alt="A stylized llama" width="500" height="520" />
-  <Image src={rubberDuckImg} alt='A "rubber duck" made of wood' width="500" height="362" />
-
-  <h2>Being physically active</h2>
-  <p>I aim to walk a few thousand steps each day, pay a visit to the gym, and try new sports; although I usually suck at them. Lately I've done table tennis, golf (mostly shooting range) and pickleball.</p>
-
-  <h2>Contact Me</h2>
-  <p>If you want to get in touch please email me at <code>hi@cmolina.dev</code>. I will try to do my best at getting back to you as soon as I can.</p>
-
-  <p>Do we already know each other? Consider</p>
-  <ul>
-    <li>adding me to your <em>LinkedIn</em> network at <a href="https://www.linkedin.com/in/carlos-molina-avenda%C3%B1o/">Carlos Molina Avendaño</a></li>
-    <li>following me on <em>Mastodon</em> at <a href="https://elk.zone/techhub.social/@cmolina">@cmolina/@techhub.social</a>. Beware, I <em>like</em> and <em>retweet</em> on lots of subjects besides programming.</li>
-  </ul>
-
-  <p><em>¡Chao!</em></p>
+  <!-- CTA -->
+  <section class="cta">
+    <h2 class="headline-lg">Ready to build something meaningful?</h2>
+    <p class="body-md muted">
+      I'm currently open to collaborations on projects that value long-term technical health and
+      human-centred design.
+    </p>
+    <a href="mailto:hola@cmolina.dev" class="btn-primary">Get in touch</a>
+  </section>
 </Base>
+
+<style>
+  /* ---- Breadcrumbs ---- */
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    /* override global article > nav */
+    justify-content: flex-start;
+    padding: 0;
+    list-style: none;
+    flex-wrap: nowrap;
+  }
+
+  .breadcrumbs a {
+    color: var(--on-surface-variant, #444748);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover { color: var(--color); }
+
+  .breadcrumbs span { color: var(--on-surface-variant, #444748); }
+  .breadcrumbs .current { color: var(--color); }
+
+  /* ---- Typography ---- */
+  .page-header {
+    margin-bottom: 4rem;
+  }
+
+  .headline-xl {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color);
+    margin: 0 0 1.5rem;
+  }
+
+  .headline-lg {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--color);
+    margin: 0 0 1.5rem;
+  }
+
+  .headline-md {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color);
+    margin: 0 0 0.75rem;
+  }
+
+  .body-lg {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .body-md {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .muted { color: var(--on-surface-variant, #444748); }
+  .italic { font-style: italic; }
+
+  .label-sm {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .accent { color: var(--secondary, #5c3cdc); }
+
+  /* ---- Bento ---- */
+  .bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (min-width: 640px) {
+    .bento {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  :global(.bento-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .bento__photo {
+    background-color: var(--surface-container, #efeded);
+    border: 1px solid var(--outline-variant, #c4c7c7);
+    overflow: hidden;
+    aspect-ratio: 1;
+  }
+
+  .bento__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 4px solid var(--secondary, #5c3cdc);
+    background-color: var(--surface-container-low, #f5f3f3);
+  }
+
+  .bento__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    background-color: var(--surface-container, #efeded);
+    color: var(--on-surface-variant, #444748);
+  }
+
+  .tag--accent {
+    background-color: var(--secondary, #5c3cdc);
+    color: #fff;
+  }
+
+  /* ---- Hobbies ---- */
+  .hobbies {
+    background-color: var(--surface-container, #efeded);
+    padding: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .hobbies__meta {
+    margin-bottom: 1rem;
+  }
+
+  /* ---- Whittling grid ---- */
+  .whittling-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 480px) {
+    .whittling-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .whittling-item {
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--surface-container-low, #f5f3f3);
+    aspect-ratio: 1;
+  }
+
+  :global(.whittling-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .whittling-item:hover :global(.whittling-img) {
+    transform: scale(1.04);
+  }
+
+  /* ---- CTA ---- */
+  .cta {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid var(--outline-variant, #c4c7c7);
+    margin-bottom: 2rem;
+  }
+
+  .cta .headline-lg {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta .body-md {
+    max-width: 40rem;
+    margin: 0 auto 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--secondary, #5c3cdc);
+    border: 2px solid var(--secondary, #5c3cdc);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--color);
+    border-color: var(--color);
+    color: var(--surface, #fbf9f8);
+  }
+
+  h1, h2, h3 { margin-top: 0; }
+</style>

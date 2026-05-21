@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
-import '../styles/fonts.css';
 import '../styles/main.css';
+import appleTouchIcon from '../assets/img/favicon/apple-touch-icon.png';
 import favicon192 from '../assets/img/favicon/favicon-192x192.png';
 
 interface Props {
@@ -28,7 +28,21 @@ const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 const canonicalUrl = `${SITE_URL}${pageUrl}`;
 const ogSlug = pageUrl === '/' ? 'home' : pageUrl.replace(/^\/|\/$/g, '');
 const ogImage = ogImageProp ?? `${SITE_URL}/og/${ogSlug}.png`;
-const isDev = import.meta.env.DEV;
+
+const pathname = Astro.url.pathname;
+const navLinks = [
+  { href: '/',                label: 'Home'     },
+  { href: '/about/services/', label: 'Services' },
+  { href: '/about/values/',   label: 'Values'   },
+  { href: '/about/me/',       label: 'About'    },
+  { href: '/blog/',           label: 'Blog'     },
+];
+
+function isActive(href: string) {
+  if (href === '/') return pathname === '/';
+  if (href === '/blog/') return pathname.startsWith('/blog') || pathname.startsWith('/posts');
+  return pathname.startsWith(href);
+}
 ---
 
 <!doctype html>
@@ -36,11 +50,10 @@ const isDev = import.meta.env.DEV;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {isDev
-      ? <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      : <link rel="icon" href={favicon192.src} type="image/png" />
-    }
-    <meta name="theme-color" content="#f9c412" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={favicon192.src} type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href={appleTouchIcon.src} sizes="180x180" />
+    <meta name="theme-color" content="#fbf9f8" />
     <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview: -1" />
     <title>{pageTitle}</title>
     <meta property="og:title" content={pageTitle} />
@@ -57,32 +70,251 @@ const isDev = import.meta.env.DEV;
     <link rel="canonical" href={canonicalUrl} />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title={SITE_TITLE} />
-    <link rel="preconnect" href="/" crossorigin="" />
-    <link rel="preload" href="/fonts/merriweather-latin-300-normal.woff2" as="font" type="font/woff2" media="(prefers-color-scheme: dark)" crossorigin="" />
-    <link rel="preload" href="/fonts/merriweather-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="" />
-    <slot name="head" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+<slot name="head" />
   </head>
   <body>
+    <!-- Full-width sticky nav -->
+    <div class="site-header">
+      <nav id="nav" class="site-nav">
+        <div id="reading-progress"></div>
+        <div class="site-nav__inner">
+          <a href="/" class="site-nav__logo">{SITE_TITLE}</a>
+          <ul class="site-nav__links">
+            {navLinks.map(({ href, label }) => (
+              <li>
+                <a
+                  href={href}
+                  class:list={['site-nav__link', { 'site-nav__link--active': isActive(href) }]}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href="mailto:hola@cmolina.dev" class="site-nav__cta">Let's Talk</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Page content (centered) -->
     <div class="centered-content">
       <header>
-        <nav id="nav">
-          <div id="reading-progress"></div>
-          <a href="/" title="Homepage" rel="index">{SITE_TITLE}</a>
-          <a href="/about/services/">Servicios</a>
-          <a href="/about/values/">My Values (EN)</a>
-          <a href="/about/me/">About Me (EN)</a>
-          <a href="/blog/">Blog (EN)</a>
-        </nav>
         <slot name="header" />
         <dialog id="message"></dialog>
       </header>
-
       <main>
         <article>
           <slot />
         </article>
       </main>
     </div>
+
+    <!-- Full-width footer -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="name">{SITE_TITLE}</span>
+          <p class="copyright">© {new Date().getFullYear()} Carlos Molina. Software that lasts.</p>
+        </div>
+        <ul class="site-footer__links">
+          <li><a href="mailto:hola@cmolina.dev">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/carlosmolinaav/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/cmolina" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="/feed/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+    </footer>
+
     <script src="../scripts/main.ts"></script>
   </body>
 </html>
+
+<style>
+  /* ---- Site Navigation ---- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    /* Only the nav wrapper is sticky; post headers scroll normally */
+  }
+
+  .site-nav {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--surface, #fbf9f8);
+    border-bottom: 1px solid var(--outline-variant, #c4c7c7);
+    transition: box-shadow 0.3s;
+  }
+
+  #reading-progress {
+    position: absolute;
+    bottom: -1px; /* sit exactly on the border */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary, #5c3cdc);
+    transform: translate(-100vw, 0);
+    will-change: transform;
+  }
+
+  .site-nav__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .site-nav__logo {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color, #1b1c1c);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .site-nav__links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .site-nav__links {
+      display: flex;
+    }
+  }
+
+  .site-nav__link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant, #444748);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .site-nav__link:hover {
+    color: var(--color, #1b1c1c);
+    text-decoration: none;
+  }
+
+  .site-nav__link--active {
+    color: var(--secondary, #5c3cdc);
+  }
+
+  .site-nav__link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--secondary, #5c3cdc);
+    border-radius: 50%;
+  }
+
+  .site-nav__cta {
+    display: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--color, #1b1c1c);
+    color: var(--color, #1b1c1c);
+    text-decoration: none;
+    background: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .site-nav__cta {
+      display: inline-block;
+    }
+  }
+
+  .site-nav__cta:hover {
+    background-color: var(--color, #1b1c1c);
+    color: var(--surface, #fbf9f8);
+    text-decoration: none;
+  }
+
+  /* ---- Site Footer ---- */
+  .site-footer {
+    width: 100%;
+    border-top: 1px solid var(--outline-variant, #c4c7c7);
+    background-color: var(--surface, #fbf9f8);
+    margin-top: 5rem;
+  }
+
+  .site-footer__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .site-footer__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .site-footer__brand .name {
+    font-family: Manrope, system-ui, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color, #1b1c1c);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .site-footer__brand .copyright {
+    font-size: 1rem;
+    color: var(--on-surface-variant, #444748);
+    margin: 0;
+  }
+
+  .site-footer__links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer__links a {
+    font-size: 1rem;
+    color: var(--on-surface-variant, #444748);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .site-footer__links a:hover {
+    border-bottom-color: var(--secondary, #5c3cdc);
+  }
+</style>
