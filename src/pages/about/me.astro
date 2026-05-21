@@ -91,6 +91,18 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
     </div>
   </section>
 
+  <!-- Currently Building -->
+  <section class="current-work">
+    <div class="current-work__meta">
+      <span class="label-sm accent">Currently Building</span>
+    </div>
+    <h2 class="headline-lg">Molina Systems</h2>
+    <p class="body-md muted">
+      I'm currently working on <a href="https://molina.systems">Molina Systems</a>, where I help
+      small businesses get online presence — from a simple landing page to a complete digital setup.
+    </p>
+  </section>
+
   <!-- CTA -->
   <section class="cta">
     <h2 class="headline-lg">Ready to build something meaningful?</h2>
@@ -294,6 +306,25 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
   .whittling-item:hover :global(.whittling-img) {
     transform: scale(1.04);
   }
+
+  /* ---- Currently Building ---- */
+  .current-work {
+    padding: 2rem 0;
+    margin-bottom: 5rem;
+    border-top: 1px solid var(--outline-variant, #c4c7c7);
+  }
+
+  .current-work__meta {
+    margin-bottom: 1rem;
+  }
+
+  .current-work a {
+    color: var(--secondary, #5c3cdc);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .current-work a:hover { color: var(--color); }
 
   /* ---- CTA ---- */
   .cta {
