@@ -23,6 +23,9 @@
     "remark-footnotes": "^4.0.1"
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource-variable/manrope": "^5.2.8",
+    "@fontsource-variable/newsreader": "^5.2.10",
     "satori": "^0.26.0",
     "sharp": "^0.34.5"
   }
