@@ -12,7 +12,36 @@ const tags = getUniqueTags(published);
 
 <Home title="Tags">
   <h1>Tags</h1>
-  {tags.map((tag) => (
-    <a href={`/tags/${tag}/`} class="post-tag">{tag}</a>
-  ))}
+  <div class="tags-list">
+    {tags.map((tag) => (
+      <a href={`/tags/${tag}/`} class="post-tag">{tag}</a>
+    ))}
+  </div>
 </Home>
+
+<style>
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .post-tag {
+    padding: 0.25rem 0.75rem;
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: var(--secondary, #5c3cdc);
+    color: #fff;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .post-tag:hover {
+    background-color: var(--color, #1b1c1c);
+    color: var(--surface, #fbf9f8);
+  }
+</style>
