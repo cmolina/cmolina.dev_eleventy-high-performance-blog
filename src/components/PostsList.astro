@@ -27,7 +27,7 @@ const { posts } = Astro.props;
         {post.data.description && (
           <p class="post-item__desc">{post.data.description}</p>
         )}
-        <a href={`/posts/${post.id}/`} class="post-item__read">
+        <a href={`/posts/${post.id}/`} class="post-item__read" aria-label={`Read full entry: ${post.data.title}`}>
           Read full entry
         </a>
       </div>
