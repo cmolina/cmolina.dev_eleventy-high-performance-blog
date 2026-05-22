@@ -18,8 +18,8 @@ export async function GET(context: APIContext) {
       url: siteUrl,
     },
     items: posts.map((post) => ({
-      id: `${siteUrl}/blog/${post.id}`,
-      url: `${siteUrl}/blog/${post.id}`,
+      id: `${siteUrl}/posts/${post.id}`,
+      url: `${siteUrl}/posts/${post.id}`,
       title: post.data.title,
       summary: post.data.description,
       date_published: post.data.date.toISOString(),
