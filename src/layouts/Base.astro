@@ -16,7 +16,6 @@ interface Props {
 
 const SITE_URL = 'https://cmolina.dev';
 const SITE_TITLE = 'Carlos Molina';
-const TWITTER_HANDLE = 'camolin3';
 
 const {
   title,
@@ -73,8 +72,6 @@ function isActive(href: string) {
       </>
     )}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={`@${TWITTER_HANDLE}`} />
-    <meta name="twitter:creator" content={`@${TWITTER_HANDLE}`} />
     <meta property="og:image" content={ogImage} />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="referrer" content="no-referrer-when-downgrade" />
