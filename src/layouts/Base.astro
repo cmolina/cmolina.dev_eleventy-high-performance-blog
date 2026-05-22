@@ -10,6 +10,8 @@ interface Props {
   lang?: string;
   pageUrl?: string;
   ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
 }
 
 const SITE_URL = 'https://cmolina.dev';
@@ -22,6 +24,8 @@ const {
   lang = 'en',
   pageUrl = Astro.url.pathname,
   ogImage: ogImageProp,
+  ogType = 'website',
+  noindex = false,
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
@@ -54,9 +58,14 @@ function isActive(href: string) {
     <link rel="icon" href={favicon192.src} type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href={appleTouchIcon.src} sizes="180x180" />
     <meta name="theme-color" content="#fbf9f8" />
-    <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview: -1" />
+    {noindex
+      ? <meta name="robots" content="noindex, nofollow" />
+      : <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview: -1" />
+    }
     <title>{pageTitle}</title>
     <meta property="og:title" content={pageTitle} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
     {description && (
       <>
         <meta name="description" content={description} />

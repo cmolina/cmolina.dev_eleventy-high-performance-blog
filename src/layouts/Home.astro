@@ -5,12 +5,13 @@ interface Props {
   title?: string;
   description?: string;
   lang?: string;
+  noindex?: boolean;
 }
 
-const { title, description, lang } = Astro.props;
+const { title, description, lang, noindex } = Astro.props;
 ---
 
-<Base title={title} description={description} lang={lang}>
+<Base title={title} description={description} lang={lang} noindex={noindex}>
   <slot slot="header" name="header" />
   <slot />
 </Base>
