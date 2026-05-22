@@ -1,0 +1,35 @@
+# Carlos Molina
+
+> Software Architecture Consultant helping companies and teams deliver software that delights, on time, by bridging the gap between technical architecture and sustainable business goals.
+
+Carlos Andrés Molina Avendaño is a Software Architect and Technical Leadership Coach based in Temuco, La Araucanía, Chile. He focuses on building software that lasts decades through clarity, documentation, and rigour — not the latest framework trend. He is currently working at [Molina Systems](https://molina.systems) providing small businesses to get online presence — from a simple landing page to a complete digital setup.
+
+## Services
+
+- [Software Delivery Optimisation](https://cmolina.dev/about/services/): Eliminating bottlenecks in development lifecycles — CI/CD pipelines, branching strategies, and deployment frequencies.
+- [Technical Leadership Coaching](https://cmolina.dev/about/services/): Coaching new Tech Leads and Engineering Managers on strategic decision-making, communication, and psychological safety.
+- [Code Testing](https://cmolina.dev/about/services/): Unit, integration, and E2E testing strategies for reliability without friction.
+- [JS/TS Applications](https://cmolina.dev/about/services/): Scalable frontends and Node services with TypeScript, designed for longevity.
+- [Accessibility](https://cmolina.dev/about/services/): WCAG compliance audits and inclusive implementation strategies.
+- [Prototyping](https://cmolina.dev/about/services/): High-fidelity functional prototypes to validate technical feasibility in days.
+
+## Blog
+
+- [Blog index](https://cmolina.dev/blog/): Technical articles on software engineering, JavaScript/TypeScript, and leadership.
+- [Rock Your Code with AC/DC: Acceptance Criteria Designed Coding](https://cmolina.dev/posts/2024/05/rock-with-acdc/): A test-driven development technique using acceptance criteria as the primary design driver.
+- [Optimizing GitHub Actions: 7 Strategies for Faster and Cost-Effective CI pipelines](https://cmolina.dev/posts/2023/12/faster-and-cost-effective-github-actions/): Practical strategies to reduce CI costs and build times.
+- [My terminal configuration](https://cmolina.dev/posts/2021/11/configure-terminal/): Developer tooling setup.
+- [Create a dark theme](https://cmolina.dev/posts/2020/09/create-dark-theme/): CSS-based dark mode implementation.
+- [Publish a TypeScript package in npm](https://cmolina.dev/posts/2020/07/publish-typescript-package/): End-to-end guide to publishing typed npm packages.
+
+## About
+
+- [About Carlos Molina](https://cmolina.dev/about/me/): Background, philosophy, and interests.
+- [Values](https://cmolina.dev/about/values/): Personal framework — Sustainable, Agile, Excellence, Stoicism.
+
+## Contact
+
+- Email: hola@cmolina.dev
+- LinkedIn: https://www.linkedin.com/in/carlosmolinaav/
+- GitHub: https://github.com/cmolina
+- RSS feed: https://cmolina.dev/feed/feed.xml
