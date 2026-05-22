@@ -2,6 +2,7 @@
 title: "Logging functions in JavaScript"
 description: "Keep track of your functions and methods' inputs and outputs, cleanly."
 date: 2020-05-18
+tags: [javascript]
 ---
 
 Logs can be very useful to debug issues in production environments.

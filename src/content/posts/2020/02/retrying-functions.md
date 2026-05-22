@@ -2,6 +2,7 @@
 title: "Retrying functions in JavaScript"
 description: "The problem statement is: you want to execute a function that may fail, and you want to retry it N times. How could you solve this?"
 date: 2020-02-20
+tags: [javascript]
 ---
 
 The problem statement is: you want to execute a function that may fail, and you want to retry it N times. How could you solve this?

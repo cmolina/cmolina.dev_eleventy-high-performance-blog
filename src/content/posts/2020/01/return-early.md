@@ -2,6 +2,7 @@
 title: "Small Things Matter: Returning early"
 description: Small improvements add up. Sadly, the same thing happen with less fortunate decisions. Keep your code with less indentation with this trick.
 date: 2020-01-16
+tags: [software-engineering]
 ---
 
 At the begging of my career as software developer I remember writing really long functions, full of nested conditionals.

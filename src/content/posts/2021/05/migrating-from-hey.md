@@ -2,6 +2,7 @@
 title: "Migrating away from hey.com"
 description: "How to leave a product you love when you can't ignore politics"
 date: 2021-05-04
+tags: [personal]
 ---
 
 I really like the Hey email client. I am a customer since July 2020 and after onboarding, I've experienced less time managing my emails and more time doing things I love.

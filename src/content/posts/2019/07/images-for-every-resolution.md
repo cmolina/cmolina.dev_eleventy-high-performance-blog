@@ -2,6 +2,7 @@
 title: Using images for every resolution
 description: Learn how browsers can choose the right image for different screen resolutions
 date: 2019-07-08
+tags: [web, frontend]
 ---
 
 A couple of days ago I needed to add an icon next to a text into a website I've been working on.
