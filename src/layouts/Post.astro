@@ -2,7 +2,6 @@
 import Base from './Base.astro';
 import { readableDate, htmlDateString } from '../utils/dates';
 import { readTime } from '../utils/readTime';
-import favicon192 from '../assets/img/favicon/favicon-192x192.png';
 
 interface Props {
   title: string;
@@ -16,9 +15,6 @@ interface Props {
 }
 
 const SITE_URL = 'https://cmolina.dev';
-const AUTHOR_NAME = 'Carlos Andrés Molina Avendaño';
-const GENRE = 'http://vocab.getty.edu/aat/300054641';
-const PUBLISHER_NAME = 'Carlos Andrés Molina Avendaño';
 
 const { title, description, date, update, slug, body, prevPost, nextPost } = Astro.props;
 
@@ -28,25 +24,21 @@ const pageUrl = `/posts/${slug}/`;
 const shareUrl = `${SITE_URL}${pageUrl}`;
 const ogImage = `${SITE_URL}/og/${slug}.png`;
 
+const author = { '@type': 'Person', name: 'Carlos Molina', url: `${SITE_URL}/` };
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'BlogPosting',
   headline: title,
-  image: [],
-  author: AUTHOR_NAME,
-  genre: GENRE,
-  publisher: {
-    '@type': 'Organization',
-    name: PUBLISHER_NAME,
-    logo: {
-      '@type': 'ImageObject',
-      url: `${SITE_URL}${favicon192.src}`,
-    },
-  },
+  image: [ogImage],
+  author,
+  publisher: author,
   url: shareUrl,
   mainEntityOfPage: shareUrl,
   datePublished: htmlDateString(date),
+  dateModified: htmlDateString(update ?? date),
   description: description ?? '',
+  inLanguage: 'en',
 };
 ---
 
