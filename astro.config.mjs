@@ -60,6 +60,11 @@ export default defineConfig({
   image: {
     domains: [],
   },
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+  },
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkFootnotes],
