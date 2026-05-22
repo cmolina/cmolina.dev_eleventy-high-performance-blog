@@ -15,6 +15,7 @@ interface Props {
 }
 
 const SITE_URL = 'https://cmolina.dev';
+const personId = `${SITE_URL}/#person`;
 
 const { title, description, date, update, slug, body, prevPost, nextPost } = Astro.props;
 
@@ -24,15 +25,15 @@ const pageUrl = `/posts/${slug}/`;
 const shareUrl = `${SITE_URL}${pageUrl}`;
 const ogImage = `${SITE_URL}/og/${slug}.png`;
 
-const author = { '@type': 'Person', name: 'Carlos Molina', url: `${SITE_URL}/` };
+const personRef = { '@id': personId };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: title,
   image: [ogImage],
-  author,
-  publisher: author,
+  author: personRef,
+  publisher: personRef,
   url: shareUrl,
   mainEntityOfPage: shareUrl,
   datePublished: htmlDateString(date),
