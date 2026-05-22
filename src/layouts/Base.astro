@@ -10,6 +10,7 @@ interface Props {
   lang?: string;
   pageUrl?: string;
   ogImage?: string;
+  ogType?: string;
   noindex?: boolean;
 }
 
@@ -23,6 +24,7 @@ const {
   lang = 'en',
   pageUrl = Astro.url.pathname,
   ogImage: ogImageProp,
+  ogType = 'website',
   noindex = false,
 } = Astro.props;
 
@@ -62,6 +64,8 @@ function isActive(href: string) {
     }
     <title>{pageTitle}</title>
     <meta property="og:title" content={pageTitle} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
     {description && (
       <>
         <meta name="description" content={description} />
