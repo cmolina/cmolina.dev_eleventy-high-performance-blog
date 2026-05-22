@@ -23,7 +23,10 @@ const posts = sortByDate(allPosts.filter(isPublished));
 
   <!-- Header -->
   <header class="page-header">
-    <h1 class="headline-xl">Notes &amp; Prototypes</h1>
+    <div class="page-header__top">
+      <h1 class="headline-xl">Notes &amp; Prototypes</h1>
+      <a href="/tags/" class="tags-link">Browse by tag →</a>
+    </div>
     <p class="body-lg muted">
       Explorations in software engineering, technical leadership, and the intersection of music
       and code. Long-form thoughts for the curious mind.
@@ -66,7 +69,7 @@ const posts = sortByDate(allPosts.filter(isPublished));
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 3rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
     font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -86,8 +89,32 @@ const posts = sortByDate(allPosts.filter(isPublished));
     margin-bottom: 4rem;
   }
 
+  .page-header__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-header__top .headline-xl { margin: 0; }
+
+  .tags-link {
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--secondary, #5c3cdc);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .tags-link:hover { text-decoration: underline; }
+
   .headline-xl {
-    font-family: Manrope, system-ui, sans-serif;
+    font-family: 'Manrope Variable', Manrope, system-ui, sans-serif;
     font-size: clamp(2.25rem, 5vw, 3rem);
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -97,7 +124,7 @@ const posts = sortByDate(allPosts.filter(isPublished));
   }
 
   .headline-md {
-    font-family: Manrope, system-ui, sans-serif;
+    font-family: 'Manrope Variable', Manrope, system-ui, sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.3;
@@ -142,7 +169,7 @@ const posts = sortByDate(allPosts.filter(isPublished));
     border: none;
     border-bottom: 2px solid var(--outline-variant, #c4c7c7);
     padding: 0.5rem 0;
-    font-family: Newsreader, Georgia, serif;
+    font-family: 'Newsreader Variable', Newsreader, Georgia, serif;
     font-size: 1.125rem;
     color: var(--color);
     outline: none;
@@ -163,7 +190,7 @@ const posts = sortByDate(allPosts.filter(isPublished));
     padding: 0.625rem 1.5rem;
     border: 2px solid var(--color);
     color: var(--color);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
     font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.05em;

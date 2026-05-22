@@ -2,6 +2,7 @@
 title: "Create a dark theme"
 description: "Learnings from adding support to dark mode to my website"
 date: 2020-09-30
+tags: [web, css]
 ---
 
 I've been interested in implementing a dark theme for my blog. I like websites that respect the user preference of using dark themes and was feeling sorry that my blog was always so bright.

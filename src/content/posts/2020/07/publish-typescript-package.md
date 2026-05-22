@@ -2,6 +2,7 @@
 title: "Publish a TypeScript package in npm"
 description: "Write once, re-use everywhere, by publishing your code in npm!"
 date: 2020-07-11
+tags: [typescript, javascript]
 update: 2021-11-09
 ---
 

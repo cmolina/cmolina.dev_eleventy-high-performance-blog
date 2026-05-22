@@ -8,9 +8,49 @@ import elephantImg from '../../assets/img/about/me/elephant.jpg';
 import llamaImg from '../../assets/img/about/me/llama.jpg';
 import rubberDuckImg from '../../assets/img/about/me/rubber-duck.jpg';
 import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
+
+const SITE_URL = 'https://cmolina.dev';
+const personId = `${SITE_URL}/#person`;
+
+const schemaGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE_URL}/about/me/` },
+      ],
+    },
+    {
+      '@type': 'ProfilePage',
+      url: `${SITE_URL}/about/me/`,
+      name: 'About Me | Carlos Molina',
+      mainEntity: {
+        '@type': 'Person',
+        '@id': personId,
+        name: 'Carlos Molina',
+        alternateName: 'Carlos Andrés Molina Avendaño',
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/og/about/me.png`,
+        jobTitle: 'Software Architect',
+        sameAs: [
+          'https://www.linkedin.com/in/carlosmolinaav/',
+          'https://github.com/cmolina',
+          'https://twitter.com/camolin3',
+        ],
+      },
+    },
+  ],
+};
 ---
 
-<Base title="About Me">
+<Base
+  title="About Me"
+  description="Meet Carlos Molina — software architect and mentor. Passionate about clarity, sustainability, and code that lasts decades."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+
   <!-- Breadcrumbs -->
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
@@ -121,7 +161,7 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 3rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
     font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -149,7 +189,7 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
   }
 
   .headline-xl {
-    font-family: Manrope, system-ui, sans-serif;
+    font-family: 'Manrope Variable', Manrope, system-ui, sans-serif;
     font-size: clamp(2.25rem, 5vw, 3rem);
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -159,7 +199,7 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
   }
 
   .headline-lg {
-    font-family: Manrope, system-ui, sans-serif;
+    font-family: 'Manrope Variable', Manrope, system-ui, sans-serif;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.01em;
@@ -169,7 +209,7 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
   }
 
   .headline-md {
-    font-family: Manrope, system-ui, sans-serif;
+    font-family: 'Manrope Variable', Manrope, system-ui, sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.3;
@@ -193,7 +233,7 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
   .italic { font-style: italic; }
 
   .label-sm {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
     font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -249,7 +289,7 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
 
   .tag {
     padding: 0.25rem 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
     font-size: 0.6875rem;
     font-weight: 500;
     letter-spacing: 0.03em;
@@ -349,7 +389,7 @@ import salamanderImg from '../../assets/img/about/me/salamander-frozen-2.jpg';
     background: var(--secondary, #5c3cdc);
     border: 2px solid var(--secondary, #5c3cdc);
     color: #fff;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
     font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: 0.05em;

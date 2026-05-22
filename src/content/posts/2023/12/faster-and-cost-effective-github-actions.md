@@ -2,6 +2,7 @@
 title: "Optimizing GitHub Actions: 7 Strategies for Faster and Cost-Effective CI pipelines"
 description: "Reduce build times by dropping unnecessary steps, leveraging concurrency, caching dependencies, and smart Dependabot tricks"
 date: 2023-12-16
+tags: [ci-cd, github-actions]
 ---
 
 From time to time, I need to change my focus from working on new features to ensure build times (and build costs) are reasonable.

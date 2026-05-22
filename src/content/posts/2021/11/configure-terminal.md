@@ -2,6 +2,7 @@
 title: "My terminal configuration"
 description: "How much time do you spend in your terminal? You better be having a good time there. Learn how to customize it"
 date: 2021-11-25
+tags: [tools, terminal]
 ---
 
 Software developers can spend long periods of time in the terminal: installing dependencies, reading logs, exploring the file system and running build commands to name a few examples. For this reason, I wrote a compilation of programs that have made my life easier, by either 

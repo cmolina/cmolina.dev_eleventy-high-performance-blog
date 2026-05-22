@@ -1,9 +1,10 @@
 /*
-  Content-Security-Policy: default-src 'self';object-src 'none';script-src 'self' https://asciinema.org https://static.cloudflareinsights.com 'sha256-jvrJFsPvprVcoXvfWEhqNot8KOZ1qj7RKjb5lUwfH9A=';style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;font-src 'self' https://fonts.gstatic.com;img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default
-  cache-control: public,max-age=300
+  Content-Security-Policy: default-src 'self';object-src 'none';script-src 'self' https://asciinema.org https://static.cloudflareinsights.com 'sha256-jvrJFsPvprVcoXvfWEhqNot8KOZ1qj7RKjb5lUwfH9A=';style-src 'self' 'unsafe-inline';font-src 'self';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default
+  cache-control: public,max-age=3600
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Report-To: {"group":"default","max_age":31536000,"endpoints":[{"url":"https://cmolinadev.report-uri.com/a/d/g"}],"include_subdomains":true}
   NEL: {"report_to":"default","max_age":31536000,"include_subdomains":true}
 

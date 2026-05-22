@@ -2,6 +2,7 @@
 title: "Know your tools: JavaScript Promises"
 description: I am sure you have used Promises before, but if you avoid them because of their mystical behavior, this article is for you.
 date: 2019-08-07
+tags: [javascript]
 ---
 
 I am sure you have used Promises before, but if you avoid them because of their mystical behavior, this article is for you.

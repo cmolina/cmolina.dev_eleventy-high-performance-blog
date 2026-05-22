@@ -2,6 +2,7 @@
 title: "Time-out functions in JavaScript"
 description: "Is it possible to stop a function if it has been running for a long time?"
 date: 2020-06-14
+tags: [javascript]
 ---
 
 I've been thinking about the problem of _time-out a function_, this is, try to run a function until a maximum amount of time, so it can either complete in time or be interrupted.

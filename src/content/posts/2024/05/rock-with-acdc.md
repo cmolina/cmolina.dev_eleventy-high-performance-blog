@@ -2,6 +2,7 @@
 title: "Rock Your Code with AC/DC: Acceptance Criteria Designed Coding"
 description: "Today I am sharing a new technique I’ve been crafting for the past few years, that has allowed me to move fast in projects while maintaining high code quality"
 date: 2024-05-22
+tags: [software-engineering, testing]
 ---
 
 Welcome to the world of AC/DC, where coding meets rock 'n' roll! No, we’re not talking about shredding guitars or belting out high notes. This <abbr title="Acceptance Criteria Designed Coding">AC/DC</abbr> stands for _Acceptance Criteria Designed Coding_, a new technique I’ve been crafting for the past few years. It’s a nod to the legendary band, and a cheeky jab at [TDD](https://martinfowler.com/bliki/TestDrivenDevelopment.html) fans. Buckle up and get ready to rock your coding workflow!
