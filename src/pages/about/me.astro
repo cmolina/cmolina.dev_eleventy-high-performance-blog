@@ -25,7 +25,7 @@ const schemaGraph = buildGraph(
   title="About Me"
   description="Meet Carlos Molina — software architect and mentor. Passionate about clarity, sustainability, and code that lasts decades."
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
 
   <!-- Breadcrumbs -->
   <nav class="breadcrumbs" aria-label="Breadcrumb">
