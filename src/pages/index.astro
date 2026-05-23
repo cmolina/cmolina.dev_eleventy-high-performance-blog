@@ -5,43 +5,24 @@ import PostsList from '../components/PostsList.astro';
 import carlosImg from '../assets/img/about/me/carlos.jpg';
 import { getCollection } from 'astro:content';
 import { isPublished, sortByDate } from '../utils/posts';
+import { SITE_URL, personRef, buildPersonSchema, buildGraph } from '../utils/schema';
 
 const allPosts = await getCollection('posts');
 const recentPosts = sortByDate(allPosts.filter(isPublished)).slice(0, 3);
 
-const SITE_URL = 'https://cmolina.dev';
-const personId = `${SITE_URL}/#person`;
-
-const schemaGraph = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Person',
-      '@id': personId,
-      name: 'Carlos Molina',
-      alternateName: 'Carlos Andrés Molina Avendaño',
-      url: `${SITE_URL}/`,
-      image: { '@type': 'ImageObject', url: `${SITE_URL}/og/home.png` },
-      jobTitle: 'Software Architect',
-      description:
-        'I help companies and teams deliver software that delights, on time, by bridging the gap between technical architecture and sustainable business goals.',
-      sameAs: [
-        'https://www.linkedin.com/in/carlosmolinaav/',
-        'https://github.com/cmolina',
-      ],
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE_URL}/#website`,
-      url: `${SITE_URL}/`,
-      name: 'Carlos Molina',
-      description:
-        'I help companies and teams deliver software that delights, on time, by bridging the gap between technical architecture and sustainable business goals.',
-      publisher: { '@id': personId },
-      inLanguage: 'en',
-    },
-  ],
-};
+const schemaGraph = buildGraph(
+  buildPersonSchema({ '@type': 'ImageObject', url: `${SITE_URL}/og/home.png` }),
+  {
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: `${SITE_URL}/`,
+    name: 'Carlos Molina',
+    description:
+      'I help companies and teams deliver software that delights, on time, by bridging the gap between technical architecture and sustainable business goals.',
+    publisher: personRef,
+    inLanguage: 'en',
+  },
+);
 ---
 
 <Base title="Software Architecture Consultant" description="I help companies and teams deliver software that delights, on time, by bridging the gap between technical architecture and sustainable business goals.">
@@ -49,7 +30,7 @@ const schemaGraph = {
   <!-- Hero -->
   <section class="hero">
     <div class="hero__text">
-      <h1 class="headline-xl">Engineering clarity for complex systems.</h1>
+      <h1 class="headline-xl">Software Architecture Consulting for Engineering Teams.</h1>
       <p class="body-lg muted">
         I help companies and teams deliver software that delights, on time, by bridging the gap
         between technical architecture and sustainable business goals.
