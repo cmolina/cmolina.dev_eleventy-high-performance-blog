@@ -52,6 +52,7 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      filter: (page) => !page.includes('/tags/'),
       serialize(item) {
         return { ...item, lastmod: sitemapLastmod(item.url) };
       },

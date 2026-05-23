@@ -10,6 +10,7 @@ interface Props {
   update?: Date;
   slug: string;
   body: string;
+  tags?: string[];
   prevPost?: { url: string; title: string };
   nextPost?: { url: string; title: string };
 }
@@ -17,7 +18,7 @@ interface Props {
 const SITE_URL = 'https://cmolina.dev';
 const personId = `${SITE_URL}/#person`;
 
-const { title, description, date, update, slug, body, prevPost, nextPost } = Astro.props;
+const { title, description, date, update, slug, body, tags, prevPost, nextPost } = Astro.props;
 
 const readMinutes = readTime(body);
 
@@ -40,6 +41,10 @@ const jsonLd = {
   dateModified: htmlDateString(update ?? date),
   description: description ?? '',
   inLanguage: 'en',
+  wordCount: body.split(/\s+/).filter(Boolean).length,
+  timeRequired: `PT${readMinutes}M`,
+  articleSection: 'Software Engineering',
+  ...(tags && tags.length > 0 && { keywords: tags.join(', ') }),
 };
 ---
 
