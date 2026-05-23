@@ -49,6 +49,7 @@ const prettyCodeOptions = {
 
 export default defineConfig({
   site: SITE_URL,
+  trailingSlash: 'always',
   integrations: [
     mdx(),
     sitemap({
