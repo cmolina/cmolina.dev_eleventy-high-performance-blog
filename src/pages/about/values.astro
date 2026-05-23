@@ -2,31 +2,21 @@
 export const meta = { title: 'My Values' };
 
 import Base from '../../layouts/Base.astro';
+import { SITE_URL, personRef, buildBreadcrumbs, buildGraph } from '../../utils/schema';
 
-const SITE_URL = 'https://cmolina.dev';
-const personId = `${SITE_URL}/#person`;
 const pageUrl = `${SITE_URL}/about/values/`;
 
-const schemaGraph = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'Values', item: pageUrl },
-      ],
-    },
-    {
-      '@type': 'WebPage',
-      url: pageUrl,
-      name: 'My Values | Carlos Molina',
-      description: 'A personal framework of four pillars — Sustainable, Agile, Excellence, and Stoicism — that guides my decisions in software, work, and life.',
-      author: { '@id': personId },
-      inLanguage: 'en',
-    },
-  ],
-};
+const schemaGraph = buildGraph(
+  buildBreadcrumbs([{ name: 'Values', item: pageUrl }]),
+  {
+    '@type': 'WebPage',
+    url: pageUrl,
+    name: 'My Values | Carlos Molina',
+    description: 'A personal framework of four pillars — Sustainable, Agile, Excellence, and Stoicism — that guides my decisions in software, work, and life.',
+    author: personRef,
+    inLanguage: 'en',
+  },
+);
 ---
 
 <Base

@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import { readableDate, htmlDateString } from '../utils/dates';
 import { readTime } from '../utils/readTime';
+import { SITE_URL, personRef } from '../utils/schema';
 
 interface Props {
   title: string;
@@ -15,9 +16,6 @@ interface Props {
   nextPost?: { url: string; title: string };
 }
 
-const SITE_URL = 'https://cmolina.dev';
-const personId = `${SITE_URL}/#person`;
-
 const { title, description, date, update, slug, body, tags, prevPost, nextPost } = Astro.props;
 
 const readMinutes = readTime(body);
@@ -25,8 +23,6 @@ const readMinutes = readTime(body);
 const pageUrl = `/posts/${slug}/`;
 const shareUrl = `${SITE_URL}${pageUrl}`;
 const ogImage = `${SITE_URL}/og/${slug}.png`;
-
-const personRef = { '@id': personId };
 
 const jsonLd = {
   '@context': 'https://schema.org',
