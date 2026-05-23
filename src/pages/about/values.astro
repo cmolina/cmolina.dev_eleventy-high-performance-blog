@@ -23,7 +23,7 @@ const schemaGraph = buildGraph(
   title="My Values"
   description="A personal framework of four pillars — Sustainable, Agile, Excellence, and Stoicism — that guides my decisions in software, work, and life."
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
   <h1>My Values</h1>
   <p>Every day we make decisions. Some of these problems are either trivial, there is already a known solution, or picking any option doesn't have a huge impact. For more complex scenarios, it is useful to have a framework to guide you to the best solution.</p>
 
