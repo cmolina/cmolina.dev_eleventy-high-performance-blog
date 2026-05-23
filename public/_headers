@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self';object-src 'none';script-src 'self' https://asciinema.org https://static.cloudflareinsights.com 'sha256-jvrJFsPvprVcoXvfWEhqNot8KOZ1qj7RKjb5lUwfH9A=';style-src 'self' 'unsafe-inline';font-src 'self';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default
+  Content-Security-Policy: default-src 'self';object-src 'none';script-src 'self' https://asciinema.org https://static.cloudflareinsights.com 'sha256-jvrJFsPvprVcoXvfWEhqNot8KOZ1qj7RKjb5lUwfH9A=' 'sha256-bDw/e2jamM3XT7COjXUclbcIWskWILZlMA7wfk3ACPs=';style-src 'self' 'unsafe-inline';font-src 'self';img-src 'self' https://asciinema.org data:;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default
   cache-control: public,max-age=3600
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block

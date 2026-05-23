@@ -41,8 +41,8 @@ const schemaGraph = buildGraph(
       <Image
         src={carlosImg}
         alt="Carlos Molina"
-        width="280"
-        height="280"
+        widths={[200, 240, 400, 480]}
+        sizes="(min-width: 768px) 240px, 200px"
         fetchpriority="high"
         loading="eager"
         class="profile-photo"
