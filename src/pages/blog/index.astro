@@ -35,7 +35,7 @@ const schemaGraph = buildGraph(
 ---
 
 <Base title="Blog" description={meta.description}>
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
   <!-- Breadcrumbs -->
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>

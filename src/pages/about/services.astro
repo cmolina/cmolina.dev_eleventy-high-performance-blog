@@ -35,7 +35,7 @@ const schemaGraph = buildGraph(
 ---
 
 <Base title="Services" description="I help technology organisations build resilient software systems and high-performing engineering cultures through strategic consultancy and hands-on expertise.">
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
 
   <!-- Breadcrumbs -->
   <nav class="breadcrumbs" aria-label="Breadcrumb">
