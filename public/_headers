@@ -1,12 +1,12 @@
 /*
-  Content-Security-Policy: default-src 'self';object-src 'none';script-src 'self' https://asciinema.org https://static.cloudflareinsights.com https://umami.cmolina.dev 'sha256-jvrJFsPvprVcoXvfWEhqNot8KOZ1qj7RKjb5lUwfH9A=' 'sha256-bDw/e2jamM3XT7COjXUclbcIWskWILZlMA7wfk3ACPs=';style-src 'self' 'unsafe-inline';font-src 'self';img-src 'self' https://asciinema.org data:;connect-src 'self' https://umami.cmolina.dev;frame-src https://asciinema.org;report-uri https://cmolinadev.report-uri.com/r/d/csp/enforce;report-to default
+  Content-Security-Policy: default-src 'self';object-src 'none';script-src 'self' https://asciinema.org https://static.cloudflareinsights.com https://umami.cmolina.dev 'sha256-jvrJFsPvprVcoXvfWEhqNot8KOZ1qj7RKjb5lUwfH9A=' 'sha256-bDw/e2jamM3XT7COjXUclbcIWskWILZlMA7wfk3ACPs=';style-src 'self' 'unsafe-inline';font-src 'self';img-src 'self' https://asciinema.org data:;connect-src 'self' https://umami.cmolina.dev;frame-src https://asciinema.org;report-uri https://o4511452454387712.ingest.us.sentry.io/api/4511452456288256/security/?sentry_key=6d43019a61513679f6ff97524e07f92d;report-to default
   cache-control: public,max-age=3600
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Report-To: {"group":"default","max_age":31536000,"endpoints":[{"url":"https://cmolinadev.report-uri.com/a/d/g"}],"include_subdomains":true}
+  Report-To: {"group":"default","max_age":31536000,"endpoints":[{"url":"https://o4511452454387712.ingest.us.sentry.io/api/4511452456288256/security/?sentry_key=6d43019a61513679f6ff97524e07f92d"}],"include_subdomains":true}
   NEL: {"report_to":"default","max_age":31536000,"include_subdomains":true}
 
 /img/*
