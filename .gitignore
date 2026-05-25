@@ -13,3 +13,4 @@ dist/
 .astro/
 test-results/
 playwright-report/
+.env
