@@ -7,6 +7,8 @@ import { execSync } from 'child_process';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
+import sentry from '@sentry/astro';
+
 const SITE_URL = 'https://cmolina.dev';
 const SITE_WIDE_UPDATE = new Date('2020-07-12');
 
@@ -50,15 +52,16 @@ const prettyCodeOptions = {
 export default defineConfig({
   site: SITE_URL,
   trailingSlash: 'always',
-  integrations: [
-    mdx(),
-    sitemap({
-      filter: (page) => !page.includes('/tags/'),
-      serialize(item) {
-        return { ...item, lastmod: sitemapLastmod(item.url) };
-      },
-    }),
-  ],
+  integrations: [mdx(), sitemap({
+    filter: (page) => !page.includes('/tags/'),
+    serialize(item) {
+      return { ...item, lastmod: sitemapLastmod(item.url) };
+    },
+  }), sentry({
+    project: 'javascript-astro',
+    org: 'molina-systems',
+    authToken: process.env.SENTRY_AUTH_TOKEN,
+  })],
   image: {
     domains: [],
   },
