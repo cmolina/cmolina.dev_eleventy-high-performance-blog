@@ -6,4 +6,4 @@ type Props = ComponentProps<typeof Image>;
 ---
 
 {/* @ts-expect-error TS can't narrow width across the LocalImageProps | RemoteImageProps union spread */}
-<Image {...Astro.props} densities={Astro.props.densities ?? [1, 2]} quality={Astro.props.quality ?? 85} />
+<Image {...Astro.props} densities={Astro.props.widths ? undefined : (Astro.props.densities ?? [1, 2])} quality={Astro.props.quality ?? 85} />
