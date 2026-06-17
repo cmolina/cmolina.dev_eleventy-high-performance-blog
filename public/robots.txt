@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /cdn-cgi/image/
+Disallow: /cdn-cgi/
 
 Sitemap: https://cmolina.dev/sitemap-index.xml
 
